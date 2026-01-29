@@ -10,5 +10,6 @@
         <ui:VisualElement name="Slot" class="mask-slot">
             <ui:VisualElement name="CelebrityMask" class="mask-item celebrity"/>
         </ui:VisualElement>
+        <ui:Button name="KickButton" text="EJECT" class="danger-button" />
     </ui:VisualElement>
 </ui:UXML>

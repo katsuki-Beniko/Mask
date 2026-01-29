@@ -7,7 +7,7 @@ public class CharacterData : ScriptableObject
     public enum CharacterClass { Nobility, Business, Celebrity }
     public CharacterClass correctClass;
     public GameObject characterPrefab;
-    
-    // NEW: Add this to change color in Inspector
-    public Color characterColor = Color.white; 
+    public Color characterColor = Color.white;
+    public bool isEnemy; 
+    [TextArea] public string whatIsWrong; // For your own notes on the "tell" 
 }

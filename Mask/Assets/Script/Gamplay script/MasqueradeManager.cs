@@ -62,4 +62,24 @@ public class MasqueradeManager : MonoBehaviour
         
         SpawnNextCharacter();
     }
+
+    public void KickCharacter()
+    {
+        if (currentIdx == 0) return;
+
+        CharacterData data = characterQueue[currentIdx - 1];
+
+        if (data.isEnemy)
+        {
+            Debug.Log("<color=blue>BANNED:</color> Good eye! That was an impostor.");
+            // Add "Security Score" points here
+        }
+        else
+        {
+            Debug.Log("<color=red>MISTAKE:</color> You just kicked out a real guest!");
+            // Lower your Stability Meter
+        }
+
+        SpawnNextCharacter();
+    }
 }

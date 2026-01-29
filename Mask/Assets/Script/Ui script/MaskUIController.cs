@@ -15,6 +15,8 @@ public class MaskUIController : MonoBehaviour
     {
         root = GetComponent<UIDocument>().rootVisualElement;
         
+        Button kickBtn = root.Q<Button>("KickButton");
+        kickBtn.clicked += () => manager.KickCharacter();
         // Set up the 3 masks from your UXML (ensure names match your UXML)
         SetupMask("NobilityMask", CharacterData.CharacterClass.Nobility);
         SetupMask("BusinessMask", CharacterData.CharacterClass.Business);
