@@ -10,6 +10,7 @@ public class MaskUIController : MonoBehaviour
     private VisualElement protocolDetail;
     private Label detailTitle;
     private Label detailContent;
+    private VisualElement resultScreen;
 
     void OnEnable()
     {
@@ -50,6 +51,9 @@ public class MaskUIController : MonoBehaviour
             ShowProtocol("General Invitation", "- Format: Standard Parchment\n- Valid for: Common Guests & Merchants");
 
         root.Q<Button>("CloseProtocol").clicked += () => protocolDetail.style.display = DisplayStyle.None;
+
+        resultScreen = root.Q<VisualElement>("ResultScreen");
+        root.Q<Button>("RestartBtn").clicked += () => UnityEngine.SceneManagement.SceneManager.LoadScene(0);
     }
 
     void ShowOverlay(VisualElement element)
@@ -65,11 +69,75 @@ public class MaskUIController : MonoBehaviour
         protocolDetail.style.display = DisplayStyle.Flex;
     }
 
+    public void ShowResultScreen()
+    {
+        // Update raw stats
+        root.Q<Label>("CorrectRejectsVal").text = manager.correctRejects.ToString();
+        root.Q<Label>("IncorrectRejectsVal").text = manager.incorrectRejects.ToString();
+        root.Q<Label>("CorrectMasksVal").text = manager.correctMasks.ToString();
+        root.Q<Label>("IncorrectMasksVal").text = manager.incorrectMasks.ToString();
+
+        // Get and show grade
+        string finalGrade = manager.CalculateGrade();
+        Label gradeLabel = root.Q<Label>("GradeValue");
+        gradeLabel.text = finalGrade;
+
+        // Apply basic color coding for testing
+        if (finalGrade == "PERFECT") gradeLabel.style.color = new Color(0, 1, 0); // Green
+        else if (finalGrade == "FAILURE") gradeLabel.style.color = new Color(1, 0, 0); // Red
+        else gradeLabel.style.color = new Color(1, 1, 1); // White
+
+        resultScreen.style.display = DisplayStyle.Flex;
+    }
+
     void HideOverlay(VisualElement element)
     {
         element.style.display = DisplayStyle.None;
     }
 
-    // Use the drag logic from previous turns here...
-    void SetupMaskDrag(string id, CharacterData.CharacterClass maskClass) { /* ... */ }
+void SetupMaskDrag(string id, CharacterData.CharacterClass maskClass)
+{
+    VisualElement mask = root.Q<VisualElement>(id);
+    Vector2 offset = Vector2.zero;
+    bool isDragging = false;
+
+    mask.RegisterCallback<PointerDownEvent>(evt => {
+        isDragging = true;
+        
+        // Calculate the distance between the mouse and the top-left of the mask
+        offset = evt.localPosition; 
+        
+        mask.CapturePointer(evt.pointerId);
+        mask.BringToFront(); 
+    });
+
+    mask.RegisterCallback<PointerMoveEvent>(evt => {
+        if (!isDragging) return;
+
+        // Use world position (evt.position) instead of local position
+        // This stops the 'jumping' when dragging across the screen
+        mask.style.left = evt.position.x - mask.parent.worldBound.x - offset.x;
+        mask.style.top = evt.position.y - mask.parent.worldBound.y - offset.y;
+    });
+
+    mask.RegisterCallback<PointerUpEvent>(evt => {
+        if (!isDragging) return;
+        isDragging = false;
+        mask.ReleasePointer(evt.pointerId);
+
+        // Standard hit detection for the guest
+        Vector2 screenPos = new Vector2(evt.position.x, Screen.height - evt.position.y);
+        Ray ray = Camera.main.ScreenPointToRay(screenPos);
+        RaycastHit2D hit = Physics2D.Raycast(ray.origin, ray.direction);
+
+        if (hit.collider != null && hit.collider.CompareTag("Guest"))
+        {
+            manager.CheckMask(maskClass);
+        }
+
+        // Snap back to its home slot
+        mask.style.left = StyleKeyword.Null;
+        mask.style.top = StyleKeyword.Null;
+    });
+}
 }

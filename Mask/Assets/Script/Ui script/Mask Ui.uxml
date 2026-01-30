@@ -3,9 +3,18 @@
         <Style src="project://database/Assets/Script/Ui%20script/Mask%20USS.uss?fileID=7433441132597879392&amp;guid=cc5886cd1dd8b394380fc60c17ff19d4&amp;type=3#Mask USS"/>
         <ui:VisualElement name="LeftRack" class="sidebar">
             <ui:Label text="MASKS" class="side-header"/>
-            <ui:VisualElement name="NobilityMask" class="mask-circle nobility"/>
-            <ui:VisualElement name="BusinessMask" class="mask-circle business"/>
-            <ui:VisualElement name="CelebrityMask" class="mask-circle celebrity"/>
+            
+            <ui:VisualElement class="mask-slot">
+                <ui:VisualElement name="NobilityMask" class="mask-circle nobility"/>
+            </ui:VisualElement>
+
+            <ui:VisualElement class="mask-slot">
+                <ui:VisualElement name="BusinessMask" class="mask-circle business"/>
+            </ui:VisualElement>
+
+            <ui:VisualElement class="mask-slot">
+                <ui:VisualElement name="CelebrityMask" class="mask-circle celebrity"/>
+            </ui:VisualElement>
         </ui:VisualElement>
         <ui:VisualElement name="RightProtocol" class="sidebar">
             <ui:Label text="PROTOCOL FILES" class="side-header"/>
@@ -32,6 +41,36 @@
             <ui:Label text="INVITATION DETAIL" name="Label" class="popup-header"/>
             <ui:Label name="InvitationText" text="Texture: Rough parchment.\nSeal: Broken." class="popup-body" style="color: rgb(255, 255, 255);"/>
             <ui:Button name="CloseInvite" text="CLOSE" class="close-btn"/>
+        </ui:VisualElement>
+        <ui:VisualElement name="ResultScreen" class="popup-panel">
+            <ui:Label text="NIGHTLY SUMMARY" class="popup-header" />
+            
+            <ui:VisualElement class="result-row">
+                <ui:Label text="Correct Rejects:" class="result-label" />
+                <ui:Label name="CorrectRejectsVal" text="0" class="result-value" />
+            </ui:VisualElement>
+            
+            <ui:VisualElement class="result-row">
+                <ui:Label text="Incorrect Rejects:" class="result-label" />
+                <ui:Label name="IncorrectRejectsVal" text="0" class="result-value" />
+            </ui:VisualElement>
+
+            <ui:VisualElement class="result-row">
+                <ui:Label text="Correct Masks:" class="result-label" />
+                <ui:Label name="CorrectMasksVal" text="0" class="result-value" />
+            </ui:VisualElement>
+
+            <ui:VisualElement class="result-row">
+                <ui:Label text="Incorrect Masks:" class="result-label" />
+                <ui:Label name="IncorrectMasksVal" text="0" class="result-value" />
+            </ui:VisualElement>
+
+            <ui:VisualElement name="GradeContainer" style="margin-top: 20px; align-items: center;">
+                <ui:Label text="FINAL EVALUATION" class="side-header" />
+                <ui:Label name="GradeValue" text="---" class="grade-text" />
+            </ui:VisualElement>
+
+            <ui:Button name="RestartBtn" text="NEXT NIGHT" class="close-btn" />
         </ui:VisualElement>
     </ui:VisualElement>
 </ui:UXML>

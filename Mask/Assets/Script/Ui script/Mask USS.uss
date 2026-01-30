@@ -3,7 +3,6 @@
     justify-content: space-between;
 }
 
-/* Vertical Sidebars */
 .sidebar {
     position: absolute;
     top: 0;
@@ -14,17 +13,33 @@
     align-items: center;
 }
 
-#LeftRack { left: 0; border-right-width: 2px; border-color: #444; }
 #RightProtocol { right: 0; width: 220px; border-left-width: 2px; border-color: #444; }
 
-/* Mask Circles */
+/* Sidebar should handle the vertical spacing */
+#LeftRack {
+    left: 0;
+    width: 160px;
+    background-color: rgba(30, 30, 30, 0.8);
+    padding: 20px 0; /* Add top padding here */
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Make the slots just big enough for the masks */
+.mask-slot {
+    width: 90px;
+    height: 90px;
+    margin-bottom: 10px; /* Adjust this to make masks closer or further */
+    justify-content: center;
+    align-items: center;
+    background-color: transparent; /* Keep it invisible */
+}
+
 .mask-circle {
     width: 80px;
     height: 80px;
     border-radius: 40px;
-    margin-top: 20px;
-    border-width: 3px;
-    border-color: white;
+    position: absolute; /* Essential for dragging */
 }
 
 .nobility { background-color: #FFD700; }
@@ -91,11 +106,10 @@
     scale: 1.05;
 }
 
-/* The detail view that appears on the right side of the screen */
 .protocol-detail-hidden {
     display: none;
     position: absolute;
-    right: 230px; /* Appear next to the sidebar */
+    right: 230px; 
     top: 50px;
     width: 300px;
     min-height: 400px;
@@ -104,3 +118,24 @@
     border-color: #8b4513;
     padding: 15px;
 }
+
+.result-row {
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 10px;
+    padding: 5px;
+    border-bottom-width: 1px;
+    border-color: #444;
+}
+.grade-text {
+    font-size: 40px;
+    -unity-font-style: bold;
+    margin-top: 5px;
+    -unity-text-align: middle-center;
+}
+
+
+.grade-perfect { color: #00FF00; }
+.grade-failure { color: #FF0000; } 
+.result-label { color: #ccc; font-size: 16px; }
+.result-value { color: gold; font-size: 18px; -unity-font-style: bold; }

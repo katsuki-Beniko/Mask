@@ -570,6 +570,11 @@ MonoBehaviour:
   - {fileID: 11400000, guid: e78dc50bd90b4834e8dc0a260b59de5f, type: 2}
   - {fileID: 11400000, guid: b647f547a99b5a942b98c5fc72fb4832, type: 2}
   - {fileID: 11400000, guid: 3f4ecd639d37c6645b14e47d38b4701b, type: 2}
+  correctRejects: 0
+  incorrectRejects: 0
+  correctMasks: 0
+  incorrectMasks: 0
+  uiController: {fileID: 380278570}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
