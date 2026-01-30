@@ -1,15 +1,37 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
-    <Style src="project://database/Assets/Script/Ui%20script/Mask%20USS.uss?fileID=7433441132597879392&amp;guid=cc5886cd1dd8b394380fc60c17ff19d4&amp;type=3#Mask USS"/>
-    <ui:VisualElement name="MaskTray">
-        <ui:VisualElement name="Slot" class="mask-slot">
-            <ui:VisualElement name="NobilityMask" class="mask-item nobility"/>
+    <ui:VisualElement name="ScreenWrapper">
+        <Style src="project://database/Assets/Script/Ui%20script/Mask%20USS.uss?fileID=7433441132597879392&amp;guid=cc5886cd1dd8b394380fc60c17ff19d4&amp;type=3#Mask USS"/>
+        <ui:VisualElement name="LeftRack" class="sidebar">
+            <ui:Label text="MASKS" class="side-header"/>
+            <ui:VisualElement name="NobilityMask" class="mask-circle nobility"/>
+            <ui:VisualElement name="BusinessMask" class="mask-circle business"/>
+            <ui:VisualElement name="CelebrityMask" class="mask-circle celebrity"/>
         </ui:VisualElement>
-        <ui:VisualElement name="Slot" class="mask-slot">
-            <ui:VisualElement name="BusinessMask" class="mask-item business"/>
+        <ui:VisualElement name="RightProtocol" class="sidebar">
+            <ui:Label text="PROTOCOL FILES" class="side-header"/>
+            <ui:Button name="ProtocolHouseA" text="House A" class="doc-icon"/>
+            <ui:Button name="ProtocolHouseB" text="House B" class="doc-icon"/>
+            <ui:Button name="ProtocolGeneral" text="General" class="doc-icon"/>
+            <ui:VisualElement name="ProtocolDetailView" class="protocol-detail-hidden">
+                <ui:Label name="DetailTitle" text="FACTION NAME" class="popup-header"/>
+                <ui:Label name="DetailContent" text="Format details go here..." class="popup-body" style="color: rgb(0, 0, 0);"/>
+                <ui:Button name="CloseProtocol" text="CLOSE" class="close-btn"/>
+            </ui:VisualElement>
         </ui:VisualElement>
-        <ui:VisualElement name="Slot" class="mask-slot">
-            <ui:VisualElement name="CelebrityMask" class="mask-item celebrity"/>
+        <ui:VisualElement name="BottomDesk">
+            <ui:Button name="LogbookBtn" text="LOGBOOK" class="desk-tool"/>
+            <ui:Button name="InvitationBtn" text="GUEST INVITE" class="desk-tool"/>
+            <ui:Button name="KickButton" text="EJECT" class="desk-tool eject-btn"/>
         </ui:VisualElement>
-        <ui:Button name="KickButton" text="EJECT" class="danger-button" />
+        <ui:VisualElement name="LogbookOverlay" class="popup-panel">
+            <ui:Label text="GUEST REGISTRY" class="popup-header"/>
+            <ui:Label name="LogbookText" text="Observation: Fidgeting with sleeves.\nPersonality: Arrogant." class="popup-body"/>
+            <ui:Button name="CloseLogbook" text="CLOSE" class="close-btn"/>
+        </ui:VisualElement>
+        <ui:VisualElement name="InvitationOverlay" class="popup-panel">
+            <ui:Label text="INVITATION DETAIL" name="Label" class="popup-header"/>
+            <ui:Label name="InvitationText" text="Texture: Rough parchment.\nSeal: Broken." class="popup-body" style="color: rgb(255, 255, 255);"/>
+            <ui:Button name="CloseInvite" text="CLOSE" class="close-btn"/>
+        </ui:VisualElement>
     </ui:VisualElement>
 </ui:UXML>

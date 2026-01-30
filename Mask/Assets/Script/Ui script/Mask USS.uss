@@ -1,61 +1,106 @@
-/* The main container at the bottom of the screen */
-#MaskTray {
-    flex-direction: row;        /* This aligns items Left-to-Right */
-    justify-content: center;    /* Centers the masks in the middle of the screen */
-    align-items: center;
-    position: absolute;
-    bottom: 20px;
-    width: 100%;
-    height: 150px;
-    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent tray background */
+#ScreenWrapper {
+    flex-grow: 1;
+    justify-content: space-between;
 }
 
-/* The invisible boxes that hold the masks in the row */
-.mask-slot {
-    width: 120px;
+/* Vertical Sidebars */
+.sidebar {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 160px;
+    background-color: rgba(30, 30, 30, 0.8);
+    padding: 15px;
+    align-items: center;
+}
+
+#LeftRack { left: 0; border-right-width: 2px; border-color: #444; }
+#RightProtocol { right: 0; width: 220px; border-left-width: 2px; border-color: #444; }
+
+/* Mask Circles */
+.mask-circle {
+    width: 80px;
+    height: 80px;
+    border-radius: 40px;
+    margin-top: 20px;
+    border-width: 3px;
+    border-color: white;
+}
+
+.nobility { background-color: #FFD700; }
+.business { background-color: #C0C0C0; }
+.celebrity { background-color: #00BFFF; }
+
+/* Bottom Desk Bar */
+#BottomDesk {
+    position: absolute;
+    bottom: 0;
+    left: 160px;
+    right: 220px;
     height: 120px;
-    margin: 0 20px;
+    background-color: #221d1a;
+    flex-direction: row;
     justify-content: center;
     align-items: center;
+    padding: 10px;
 }
 
-/* The actual mask styling */
-.mask-item {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    border-width: 2px;
-    border-color: white;
-    
-    /* CRITICAL: Allows the mask to move outside the Tray boundaries */
-    position: absolute; 
-}
-
-/* Individual Colors for testing */
-.nobility { background-color: gold; }
-.business { background-color: silver; }
-.celebrity { background-color: deepskyblue; }
-
-/* Feedback when dragging */
-.mask-item:active {
-    scale: 1.1;
-    border-color: yellow;
-    opacity: 0.8;
-}
-
-.danger-button {
-    position: absolute;
-    right: 50px;
-    top: 50%;
-    width: 120px;
-    height: 120px;
-    background-color: darkred;
+.desk-tool {
+    width: 140px;
+    height: 80px;
+    margin: 0 15px;
+    background-color: #4a4a4a;
     color: white;
-    border-radius: 60px; /* Makes it a circle */
-    font-size: 20px;
+    -unity-font-style: bold;
 }
 
-.danger-button:hover {
-    background-color: red;
-    scale: 1.1;
+.eject-btn { background-color: #8b0000; }
+
+/* Pop-up Panels */
+.popup-panel {
+    display: none;
+    position: absolute;
+    top: 20%;
+    left: 30%;
+    width: 40%;
+    min-height: 300px;
+    background-color: #1a1a1a;
+    border-width: 4px;
+    border-color: #FFD700;
+    padding: 20px;
+}
+
+.side-header { color: #aaa; font-size: 14px; -unity-font-style: bold; margin-bottom: 10px; }
+.popup-header { color: gold; font-size: 20px; -unity-font-style: bold; border-bottom-width: 1px; border-color: gold; }
+.popup-body { color: white; margin-top: 15px; white-space: normal; }
+
+/* Styling for the letter icons in the sidebar */
+.doc-icon {
+    width: 140px;
+    height: 60px;
+    margin-top: 15px;
+    background-color: #d2b48c; /* Paper color */
+    color: #3e2723;
+    border-width: 2px;
+    border-color: #5d4037;
+    -unity-font-style: bold;
+}
+
+.doc-icon:hover {
+    background-color: #f5deb3;
+    scale: 1.05;
+}
+
+/* The detail view that appears on the right side of the screen */
+.protocol-detail-hidden {
+    display: none;
+    position: absolute;
+    right: 230px; /* Appear next to the sidebar */
+    top: 50px;
+    width: 300px;
+    min-height: 400px;
+    background-color: #fdf5e6;
+    border-width: 3px;
+    border-color: #8b4513;
+    padding: 15px;
 }
