@@ -6,80 +6,71 @@ public class MasqueradeManager : MonoBehaviour
     public Transform spawnPoint;
     public List<CharacterData> characterQueue;
     
+    // Stats Tracking
+    [HideInInspector] public int correctRejects = 0;
+    [HideInInspector] public int incorrectRejects = 0;
+    [HideInInspector] public int correctMasks = 0;
+    [HideInInspector] public int incorrectMasks = 0;
+
+    public MaskUIController uiController; // Reference to show the final screen
     private GameObject currentCharacterInstance;
     private int currentIdx = 0;
 
-    void Start()
-    {
-        SpawnNextCharacter();
-    }
+    void Start() => SpawnNextCharacter();
 
     public void SpawnNextCharacter()
     {
         if (currentCharacterInstance != null) Destroy(currentCharacterInstance);
 
-        if (currentIdx < characterQueue.Count && characterQueue[currentIdx] != null)
+        if (currentIdx < characterQueue.Count)
         {
             CharacterData data = characterQueue[currentIdx];
-            
             currentCharacterInstance = Instantiate(data.characterPrefab, spawnPoint.position, Quaternion.identity);
             currentCharacterInstance.transform.SetParent(spawnPoint);
 
-            // Change color for testing placeholders
-            SpriteRenderer renderer = currentCharacterInstance.GetComponent<SpriteRenderer>();
-            if (renderer == null) renderer = currentCharacterInstance.GetComponentInChildren<SpriteRenderer>();
-            
-            if (renderer != null)
-            {
-                renderer.color = data.characterColor;
-            }
-
-            // TEST LOG: Tells you who just walked in
-            Debug.Log($"<color=cyan>TESTING:</color> {data.characterName} has arrived. Expected Mask: {data.correctClass}");
+            SpriteRenderer renderer = currentCharacterInstance.GetComponentInChildren<SpriteRenderer>();
+            if (renderer != null) renderer.color = data.characterColor;
 
             currentIdx++;
         }
         else
         {
-            Debug.Log("No more guests in the queue.");
+            // Trigger the result screen when no characters are left
+            uiController.ShowResultScreen();
         }
     }
 
     public void CheckMask(CharacterData.CharacterClass givenClass)
     {
-        if (currentIdx == 0) return;
-
         CharacterData data = characterQueue[currentIdx - 1];
-        
-        if (givenClass == data.correctClass)
-        {
-            Debug.Log($"<color=green>SUCCESS:</color> You correctly identified {data.characterName} as {data.correctClass}.");
-        }
-        else
-        {
-            Debug.Log($"<color=red>SCANDAL:</color> You gave a {givenClass} mask to a {data.correctClass}!");
-        }
+        if (givenClass == data.correctClass && !data.isEnemy) correctMasks++;
+        else incorrectMasks++;
         
         SpawnNextCharacter();
     }
 
     public void KickCharacter()
     {
-        if (currentIdx == 0) return;
-
         CharacterData data = characterQueue[currentIdx - 1];
-
-        if (data.isEnemy)
-        {
-            Debug.Log("<color=blue>BANNED:</color> Good eye! That was an impostor.");
-            // Add "Security Score" points here
-        }
-        else
-        {
-            Debug.Log("<color=red>MISTAKE:</color> You just kicked out a real guest!");
-            // Lower your Stability Meter
-        }
+        if (data.isEnemy) correctRejects++;
+        else incorrectRejects++;
 
         SpawnNextCharacter();
+    }
+
+    public string CalculateGrade()
+    {
+        int totalGuests = characterQueue.Count;
+        int totalCorrect = correctMasks + correctRejects;
+        
+        // Calculate percentage of correct actions
+        float scorePercentage = (float)totalCorrect / totalGuests;
+
+        if (totalCorrect == totalGuests) return "PERFECT";
+        if (totalCorrect == 0) return "FAILURE";
+        
+        if (scorePercentage >= 0.8f) return "GOOD";    // 80% or higher
+        if (scorePercentage >= 0.5f) return "NORMAL";  // 50% to 79%
+        return "BAD";                                  // Below 50%
     }
 }
