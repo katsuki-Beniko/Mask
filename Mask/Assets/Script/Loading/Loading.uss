@@ -1,0 +1,16 @@
+:root {
+}
+
+.panel {
+}
+
+.container {
+}
+
+.hide {
+    display: none;
+}
+
+.appear {
+    display: flex;
+}

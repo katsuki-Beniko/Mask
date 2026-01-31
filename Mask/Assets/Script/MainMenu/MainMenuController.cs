@@ -56,6 +56,12 @@ public class MainMenuController : MonoBehaviour
         }
     }
 
+    public void LoadNewPage(string targetName)
+    {
+        LoadingBridge.NextSceneName = targetName;
+        SceneManager.LoadScene("Loading");
+    }
+
     void Update()
     {
         float dt = Time.deltaTime;
@@ -105,11 +111,12 @@ public class MainMenuController : MonoBehaviour
     private void OnTutoButtonClicked()
     {
         Debug.Log("Tutorial");
+        LoadNewPage("tutorial");
     }
 
     private void OnCreditButtonClicked()
     {
         //SceneManager.SceneLoaded();
-        Debug.Log("Credit");
+        LoadNewPage("Credits");
     }
 }
