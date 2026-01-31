@@ -5,7 +5,6 @@ using UnityEngine.SceneManagement;
 
 public class MainMenuController : MonoBehaviour
 {
-    [SerializeField] float rotationSpeed = 90f;
 
     [Header("Audio Settings")]
     [SerializeField] private float fadeDuration = 5f;
