@@ -10,9 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d2acb28f8cdb77843bfa6e9955aa1d35, type: 3}
-  m_Name: Celebrity
+  m_Name: Character 5
   m_EditorClassIdentifier: Assembly-CSharp::CharacterData
   characterName: Celebrity
   correctClass: 2
-  characterPrefab: {fileID: 5359676708210546143, guid: 51e09678f3083b24a84d42e2db63037f, type: 3}
-  characterColor: {r: 1, g: 0, b: 0.75288486, a: 1}
+  characterPrefab: {fileID: 7813110453555867647, guid: 721bf9e28ec9fc94bb5e98d581f8cf1a, type: 3}
+  characterColor: {r: 1, g: 1, b: 1, a: 1}
+  familyCrest: {fileID: 0}
+  isEnemy: 0
+  whatIsWrong: 
