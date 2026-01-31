@@ -22,6 +22,10 @@ public class MainMenuController : MonoBehaviour
     private Button settingBtn;
     private Button tutoBtn;
     private Button creditBtn;
+    private VisualElement _settings;
+    private SliderInt _volSlider;
+    private Label _volNumLabel;
+    private Button _backBtn;
 
     private float _timer = 0f;
     //private float _cumulativeAngle = 0f;
@@ -40,11 +44,28 @@ public class MainMenuController : MonoBehaviour
         tutoBtn = ui.Q<Button>("Tutorial");
         creditBtn = ui.Q<Button>("Credits");
 
+        _settings = ui.Q<VisualElement>("settings_container");
+        _volSlider = ui.Q<SliderInt>("vol");
+        _volNumLabel = ui.Q<Label>("vol_num");
+        _backBtn = ui.Q<Button>("back_btn");
+
         startBtn.clicked += OnStartButtonClicked;
-        settingBtn.clicked += OnSettingButtonClicked;
+        settingBtn.clicked += ShowSettings;
         tutoBtn.clicked += OnTutoButtonClicked;
         creditBtn.clicked += OnCreditButtonClicked;
+        _backBtn.clicked += HideSettings;
 
+        int savedVol = PlayerPrefs.GetInt("MasterVolume", 100);
+        _volSlider.value = savedVol;
+        _volNumLabel.text = savedVol.ToString();
+
+        _volSlider.RegisterValueChangedCallback(evt =>
+        {
+            _volNumLabel.text = evt.newValue.ToString();
+            PlayerPrefs.SetInt("MasterVolume", evt.newValue);
+
+            AudioListener.volume = evt.newValue / 100f;
+        });
 
         if(_audioSource != null && _audioSource.clip  != null)
         {
@@ -66,7 +87,7 @@ public class MainMenuController : MonoBehaviour
     {
         float dt = Time.deltaTime;
 
-        if(_fadeTimer < fadeDuration)
+        if(_audioSource != null && _fadeTimer < fadeDuration)
         {
             _fadeTimer += dt;
             float fadePercentage = Mathf.Clamp01(_fadeTimer / fadeDuration);
@@ -77,7 +98,7 @@ public class MainMenuController : MonoBehaviour
 
         if (musicName != null)
         {
-            float pulseOpacity = (Mathf.Sin(Time.time * 1f) + 1f) / 2f;
+            float pulseOpacity = (Mathf.Sin(Time.time * 2f) + 1f) / 2f;
             musicName.style.opacity = pulseOpacity;
         }
 
@@ -85,7 +106,7 @@ public class MainMenuController : MonoBehaviour
 
         if (musicNote != null)
         {
-            float verticalOffset = Mathf.Sin(_timer * 1f) * 10f;
+            float verticalOffset = Mathf.Sin(_timer * 2f) * 10f;
             musicNote.style.translate = new Translate(0, verticalOffset);
         }
     }
@@ -103,9 +124,16 @@ public class MainMenuController : MonoBehaviour
         Debug.Log("Start");
     }
 
-    private void OnSettingButtonClicked()
+    private void ShowSettings()
     {
-        Debug.Log("Setting");
+        _settings.RemoveFromClassList("hide");
+        _settings.AddToClassList("appear");
+    }
+
+    private void HideSettings()
+    {
+        _settings.RemoveFromClassList("appear");
+        _settings.AddToClassList("hide");
     }
 
     private void OnTutoButtonClicked()
