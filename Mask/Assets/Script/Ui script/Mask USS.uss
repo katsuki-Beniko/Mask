@@ -3,6 +3,46 @@
     justify-content: space-between;
 }
 
+#Ceiling {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 50px;
+    background-image: url('project://database/Assets/Images/Ceilling.png');
+    -unity-background-scale-mode: stretch-to-fill;
+}
+
+.curtain {
+    position: absolute;
+    -unity-background-scale-mode: stretch-to-fill;
+    z-index: -1; 
+}
+
+#CurtainTop {
+    top: 50px;
+    left: 160px;
+    right: 220px;
+    height: 100px;
+    background-image: url('project://database/Assets/Images/top curtain.png');
+}
+
+#CurtainLeft {
+    top: 50px;
+    left: 160px;
+    width: 80px;
+    bottom: 120px;
+    background-image: url('project://database/Assets/Images/left curtain.png');
+}
+
+#CurtainRight {
+    top: 50px;
+    right: 220px;
+    width: 80px; 
+    bottom: 120px;
+    background-image: url('project://database/Assets/Images/right curtain.png');
+}
+
 .sidebar {
     position: absolute;
     top: 0;
@@ -13,15 +53,44 @@
     align-items: center;
 }
 
-#RightProtocol { right: 0; width: 220px; border-left-width: 2px; border-color: #444; }
+#RightProtocol {
+    right: 0;
+    width: 220px;
+    background-image: url('project://database/Assets/Images/Right Wall.png');
+    -unity-background-scale-mode: stretch-to-fill;
+    border-left-width: 0; 
+}
 
 #LeftRack {
     left: 0;
     width: 160px;
-    background-color: rgba(30, 30, 30, 0.8);
     padding: 20px 0; 
     flex-direction: column;
     align-items: center;
+    background-image: url('project://database/Assets/Images/Left wall.png');
+    -unity-background-scale-mode: stretch-to-fill;
+}
+
+/* Base style for both stand parts */
+.mask-stand-back, .mask-stand-front {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -unity-background-scale-mode: scale-to-fit;
+    /* This ensures they don't block mouse clicks for dragging the mask */
+    picking-mode: ignore; 
+}
+
+/* Background image for the main T-shaped stand */
+.mask-stand-back {
+    background-image: url('project://database/Assets/Images/mask stand.png');
+    z-index: -1; /* Forces it behind the mask */
+}
+
+/* Background image for the two holders/hooks */
+.mask-stand-front {
+    background-image: url('project://database/Assets/Images/mask stand front.png');
+    z-index: 1; /* Forces it in front of the mask */
 }
 
 .mask-slot {
@@ -51,11 +120,12 @@
     left: 160px;
     right: 220px;
     height: 120px;
-    background-color: #221d1a;
+    padding: 10px;
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    padding: 10px;
+    background-image: url('project://database/Assets/Images/Desk.png');
+    -unity-background-scale-mode: stretch-to-fill;
 }
 
 .desk-tool {
@@ -69,7 +139,6 @@
 
 .eject-btn { background-color: #8b0000; }
 
-/* Pop-up Panels */
 .popup-panel {
     display: none;
     position: absolute;
@@ -109,13 +178,14 @@
     position: absolute;
     right: 230px; 
     top: 50px;
-    width: 300px;
+    width: 350px;
     min-height: 400px;
-    background-color: #fdf5e6;
+    background-image: url("project://database/Assets/Images/invitation example page.png");
     border-width: 3px;
     border-color: #8b4513;
     padding: 15px;
 }
+
 
 .result-row {
     flex-direction: row;
@@ -150,12 +220,10 @@
 }
 
 .pause-frame {
-    width: 800px;  /* Adjust size to match your original image aspect ratio */
+    width: 800px;
     height: 600px;
     padding: 40px;
     background-image: url('project://database/Assets/Images/PauseMenu_Background.png');
-    
-    /* Change 'stretch-to-fill' to 'scale-to-fit' to prevent distortion */
     -unity-background-scale-mode: scale-to-fit; 
     
     align-items: center;

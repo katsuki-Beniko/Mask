@@ -1,40 +1,32 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
     <ui:VisualElement name="ScreenWrapper">
         <Style src="project://database/Assets/Script/Ui%20script/Mask%20USS.uss?fileID=7433441132597879392&amp;guid=cc5886cd1dd8b394380fc60c17ff19d4&amp;type=3#Mask USS"/>
-        <ui:VisualElement name="RightProtocol" class="sidebar" style="width: 194px;">
-            <ui:Label text="Protocol Files" class="side-header" style="-unity-font-definition: url(&quot;project://database/Assets/Font%20style/mrdafoe-bower-master/MrDafoe-Regular.ttf?fileID=12800000&amp;guid=df019b53e3aeef841b07cd38f3668ad0&amp;type=3#MrDafoe-Regular&quot;); font-size: 25px; height: 33px;"/>
-            <ui:Button name="ProtocolHouseA" text="House A" class="doc-icon" style="-unity-font-definition: url(&quot;project://database/Assets/Font%20style/mrdafoe-bower-master/MrDafoe-Regular.ttf?fileID=12800000&amp;guid=df019b53e3aeef841b07cd38f3668ad0&amp;type=3#MrDafoe-Regular&quot;); height: 64px; font-size: 20px; -unity-font-style: normal;"/>
-            <ui:Button name="ProtocolHouseB" text="House B" class="doc-icon" style="font-size: 20px; -unity-font-definition: url(&quot;project://database/Assets/Font%20style/mrdafoe-bower-master/MrDafoe-Regular.ttf?fileID=12800000&amp;guid=df019b53e3aeef841b07cd38f3668ad0&amp;type=3#MrDafoe-Regular&quot;); -unity-font-style: normal;"/>
-            <ui:Button name="ProtocolGeneral" text="General" class="doc-icon" style="font-size: 20px; -unity-font-definition: url(&quot;project://database/Assets/Font%20style/mrdafoe-bower-master/MrDafoe-Regular.ttf?fileID=12800000&amp;guid=df019b53e3aeef841b07cd38f3668ad0&amp;type=3#MrDafoe-Regular&quot;); -unity-font-style: normal;"/>
-            <ui:VisualElement name="ProtocolDetailView" class="protocol-detail-hidden">
-                <ui:Label name="DetailTitle" text="FACTION NAME" class="popup-header"/>
-                <ui:Label name="DetailContent" text="Format details go here..." class="popup-body" style="color: rgb(0, 0, 0);"/>
-                <ui:Button name="CloseProtocol" text="CLOSE" class="close-btn"/>
-            </ui:VisualElement>
-        </ui:VisualElement>
-        <ui:VisualElement name="LeftRack" class="sidebar" style="top: 0; left: 1px;">
-            <ui:Label text="Masks" selectable="false" focusable="false" class="side-header" style="-unity-font-definition: url(&quot;project://database/Assets/Font%20style/mrdafoe-bower-master/MrDafoe-Regular.ttf?fileID=12800000&amp;guid=df019b53e3aeef841b07cd38f3668ad0&amp;type=3#MrDafoe-Regular&quot;); font-size: 25px; height: 34px;"/>
-            <ui:VisualElement class="mask-slot">
-                <ui:VisualElement name="NobilityMask" class="mask-circle nobility"/>
-            </ui:VisualElement>
-            <ui:VisualElement class="mask-slot">
-                <ui:VisualElement name="BusinessMask" class="mask-circle business"/>
-            </ui:VisualElement>
-            <ui:VisualElement class="mask-slot">
-                <ui:VisualElement name="CelebrityMask" class="mask-circle celebrity"/>
-            </ui:VisualElement>
-        </ui:VisualElement>
-        <ui:VisualElement name="BottomDesk" style="bottom: -8px; right: -5px; left: 1px; font-size: 20px; justify-content: center; align-items: center;">
+        <ui:VisualElement name="Ceiling" style="height: 31px;"/>
+        <ui:VisualElement name="CurtainTop" class="curtain" style="height: 117px; top: 23px; right: 186px; left: 157px;"/>
+        <ui:VisualElement name="CurtainLeft" class="curtain" style="width: 88px; left: 152px;"/>
+        <ui:VisualElement name="CurtainRight" class="curtain" style="width: 97px; right: 184px;"/>
+        <ui:VisualElement name="BottomDesk" style="bottom: -8px; right: -5px; left: 1px; font-size: 20px; justify-content: center; align-items: center; height: 151px;">
             <ui:Button name="LogbookBtn" text="LogBook" display-tooltip-when-elided="false" class="desk-tool" style="-unity-font-definition: url(&quot;project://database/Assets/Font%20style/mrdafoe-bower-master/MrDafoe-Regular.ttf?fileID=12800000&amp;guid=df019b53e3aeef841b07cd38f3668ad0&amp;type=3#MrDafoe-Regular&quot;); font-size: 20px; -unity-font-style: normal; white-space: nowrap; -unity-text-align: middle-center; text-overflow: clip;"/>
             <ui:Button name="InvitationBtn" text="Guest Invitation" class="desk-tool" style="-unity-font-definition: url(&quot;project://database/Assets/Font%20style/mrdafoe-bower-master/MrDafoe-Regular.ttf?fileID=12800000&amp;guid=df019b53e3aeef841b07cd38f3668ad0&amp;type=3#MrDafoe-Regular&quot;); -unity-font-style: normal; font-size: 20px;"/>
             <ui:Button name="KickButton" text="Kick" triple-click-selects-line="false" class="desk-tool eject-btn" style="-unity-font-definition: url(&quot;project://database/Assets/Font%20style/mrdafoe-bower-master/MrDafoe-Regular.ttf?fileID=12800000&amp;guid=df019b53e3aeef841b07cd38f3668ad0&amp;type=3#MrDafoe-Regular&quot;); font-size: 20px; -unity-font-style: normal; width: 120px;"/>
+        </ui:VisualElement>
+        <ui:VisualElement name="RightProtocol" class="sidebar" style="width: 194px; background-color: rgba(30, 30, 30, 0);">
+            <ui:Label text="Protocol Files" class="side-header" style="-unity-font-definition: url(&quot;project://database/Assets/Font%20style/mrdafoe-bower-master/MrDafoe-Regular.ttf?fileID=12800000&amp;guid=df019b53e3aeef841b07cd38f3668ad0&amp;type=3#MrDafoe-Regular&quot;); font-size: 25px; height: 33px;"/>
+            <ui:Button name="ProtocolHouseA" text="House A" class="doc-icon" style="-unity-font-definition: url(&quot;project://database/Assets/Font%20style/mrdafoe-bower-master/MrDafoe-Regular.ttf?fileID=12800000&amp;guid=df019b53e3aeef841b07cd38f3668ad0&amp;type=3#MrDafoe-Regular&quot;); height: 64px; font-size: 20px; -unity-font-style: normal; display: flex;"/>
+            <ui:Button name="ProtocolHouseB" text="House B" class="doc-icon" style="font-size: 20px; -unity-font-definition: url(&quot;project://database/Assets/Font%20style/mrdafoe-bower-master/MrDafoe-Regular.ttf?fileID=12800000&amp;guid=df019b53e3aeef841b07cd38f3668ad0&amp;type=3#MrDafoe-Regular&quot;); -unity-font-style: normal;"/>
+            <ui:Button name="ProtocolGeneral" text="General" class="doc-icon" style="font-size: 20px; -unity-font-definition: url(&quot;project://database/Assets/Font%20style/mrdafoe-bower-master/MrDafoe-Regular.ttf?fileID=12800000&amp;guid=df019b53e3aeef841b07cd38f3668ad0&amp;type=3#MrDafoe-Regular&quot;); -unity-font-style: normal;"/>
+            <ui:VisualElement name="ProtocolDetailView" class="protocol-detail-hidden" style="display: none;">
+                <ui:Label name="DetailTitle" text="FACTION NAME" class="popup-header" style="-unity-font-definition: url(&quot;project://database/Assets/Font%20style/mrdafoe-bower-master/MrDafoe-Regular.ttf?fileID=12800000&amp;guid=df019b53e3aeef841b07cd38f3668ad0&amp;type=3#MrDafoe-Regular&quot;); font-size: 35px; margin-bottom: 10px; -unity-text-align: upper-center; color: rgb(74, 46, 46);"/>
+                <ui:VisualElement name="CrestIcon" style="height: 247px; width: 269px; align-self: center; margin-bottom: 15px; -unity-background-scale-mode: scale-to-fit;"/>
+                <ui:Button name="CloseProtocol" text="CLOSE" class="close-btn"/>
+            </ui:VisualElement>
         </ui:VisualElement>
         <ui:VisualElement name="LogbookOverlay" class="popup-panel">
             <ui:Label text="GUEST REGISTRY" class="popup-header"/>
             <ui:Label name="LogbookText" text="Observation: Fidgeting with sleeves.\nPersonality: Arrogant." class="popup-body"/>
             <ui:Button name="CloseLogbook" text="CLOSE" class="close-btn"/>
         </ui:VisualElement>
-        <ui:VisualElement name="InvitationOverlay" class="popup-panel">
+        <ui:VisualElement name="InvitationOverlay" class="popup-panel" style="display: none;">
             <ui:Label text="INVITATION DETAIL" name="Label" class="popup-header"/>
             <ui:Label name="InvitationText" text="Texture: Rough parchment.\nSeal: Broken." class="popup-body" style="color: rgb(255, 255, 255);"/>
             <ui:Button name="CloseInvite" text="CLOSE" class="close-btn"/>
@@ -73,6 +65,24 @@
                     </ui:VisualElement>
                     <ui:Button name="MainMenuBtn" text="Main Menu" class="pause-btn" style="background-image: url(&quot;project://database/Assets/Images/btn.png?fileID=2800000&amp;guid=096fa9a5249ba4b4e93c845f594229f1&amp;type=3#btn&quot;); border-left-color: rgba(255, 255, 255, 0); border-right-color: rgba(255, 255, 255, 0); border-top-color: rgba(255, 255, 255, 0); border-bottom-color: rgba(255, 255, 255, 0); border-left-width: 0; border-top-width: 0; border-right-width: 0; border-bottom-width: 0; background-color: rgba(255, 255, 255, 0); color: rgb(0, 0, 0); background-size: 190% 450%; font-size: 50px; -unity-font-definition: url(&quot;project://database/Assets/Font%20style/mrdafoe-bower-master/MrDafoe-Regular.ttf?fileID=12800000&amp;guid=df019b53e3aeef841b07cd38f3668ad0&amp;type=3#MrDafoe-Regular&quot;); height: 108px; width: 377px;"/>
                 </ui:VisualElement>
+            </ui:VisualElement>
+        </ui:VisualElement>
+        <ui:VisualElement name="LeftRack" class="sidebar" style="top: 0; left: 1px; background-color: rgba(30, 30, 30, 0);">
+            <ui:Label text="Masks" selectable="false" focusable="false" class="side-header" style="-unity-font-definition: url(&quot;project://database/Assets/Font%20style/mrdafoe-bower-master/MrDafoe-Regular.ttf?fileID=12800000&amp;guid=df019b53e3aeef841b07cd38f3668ad0&amp;type=3#MrDafoe-Regular&quot;); font-size: 25px; height: 34px;"/>
+            <ui:VisualElement class="mask-slot" style="background-image: none;">
+                <ui:VisualElement class="mask-stand-back" />
+                <ui:VisualElement name="NobilityMask" class="mask-circle nobility" style="background-image: url(&quot;project://database/Assets/Images/Nobility%20Mask.png?fileID=2800000&amp;guid=9ef35efa53ac01d42b24191d1e794092&amp;type=3#Nobility Mask&quot;); background-color: rgba(255, 215, 0, 0); top: 16px; left: 5px; background-size: 150% 150%;"/>
+                <ui:VisualElement class="mask-stand-front" />
+            </ui:VisualElement>
+            <ui:VisualElement class="mask-slot">
+                <ui:VisualElement class="mask-stand-back" />
+                <ui:VisualElement name="BusinessMask" class="mask-circle business" style="background-image: url(&quot;project://database/Assets/Images/Business%20mask.png?fileID=2800000&amp;guid=9e3fb43e673d0b449a3f72a68fdeb5cf&amp;type=3#Business mask&quot;); background-color: rgba(192, 192, 192, 0);"/>
+                <ui:VisualElement class="mask-stand-front" />
+            </ui:VisualElement>
+            <ui:VisualElement class="mask-slot">
+                <ui:VisualElement class="mask-stand-back" />
+                <ui:VisualElement name="CelebrityMask" class="mask-circle celebrity" style="background-image: url(&quot;project://database/Assets/Images/Celebrity%20Mask.png?fileID=2800000&amp;guid=dbbecea7acf7b824cb31b1c668d780b6&amp;type=3#Celebrity Mask&quot;); background-color: rgba(0, 191, 255, 0);"/>
+                <ui:VisualElement class="mask-stand-front" />
             </ui:VisualElement>
         </ui:VisualElement>
     </ui:VisualElement>

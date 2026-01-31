@@ -12,10 +12,13 @@ public class MaskUIController : MonoBehaviour
     private VisualElement invitationOverlay;
     private VisualElement protocolDetail;
     private Label detailTitle;
-    private Label detailContent;
     private VisualElement resultScreen;
     private VisualElement pauseMenu;
     private bool isPaused = false; 
+    private VisualElement crestIcon; // Add this reference
+    public Texture2D crestHouseA;    // Drag Assets/Images/CrestA here
+    public Texture2D crestHouseB;    // Drag Assets/Images/CrestB here
+    public Texture2D crestGeneral;   // Drag Assets/Images/CrestGeneral here
 
     void OnEnable()
     {
@@ -37,6 +40,7 @@ public class MaskUIController : MonoBehaviour
         // Overlay References
         logbookOverlay = root.Q<VisualElement>("LogbookOverlay");
         invitationOverlay = root.Q<VisualElement>("InvitationOverlay");
+        crestIcon = root.Q<VisualElement>("CrestIcon");
 
         // Bottom Tool Buttons
         root.Q<Button>("LogbookBtn").clicked += () => ShowOverlay(logbookOverlay);
@@ -49,6 +53,10 @@ public class MaskUIController : MonoBehaviour
         // Kick Button
         root.Q<Button>("KickButton").clicked += () => manager.KickCharacter();
 
+        root.Q<Button>("ProtocolHouseA").clicked += () => ShowProtocol("Nobility House A", crestHouseA);
+        root.Q<Button>("ProtocolHouseB").clicked += () => ShowProtocol("Nobility House B", crestHouseB);
+        root.Q<Button>("ProtocolGeneral").clicked += () => ShowProtocol("General Invitation", crestGeneral);
+
         // Setup Dragging for masks (Existing Logic)
         SetupMaskDrag("NobilityMask", CharacterData.CharacterClass.Nobility);
         SetupMaskDrag("BusinessMask", CharacterData.CharacterClass.Business);
@@ -56,17 +64,6 @@ public class MaskUIController : MonoBehaviour
 
         protocolDetail = root.Q<VisualElement>("ProtocolDetailView");
         detailTitle = root.Q<Label>("DetailTitle");
-        detailContent = root.Q<Label>("DetailContent");
-
-        // Link the individual protocol letters
-        root.Q<Button>("ProtocolHouseA").clicked += () => 
-            ShowProtocol("Nobility House A", "- Crest: Silver Eagle\n- Seal: Blue Wax\n- Language: High Silens");
-        
-        root.Q<Button>("ProtocolHouseB").clicked += () => 
-            ShowProtocol("Nobility House B", "- Crest: Golden Lion\n- Seal: Red Wax\n- Language: Archaic Latin");
-
-        root.Q<Button>("ProtocolGeneral").clicked += () => 
-            ShowProtocol("General Invitation", "- Format: Standard Parchment\n- Valid for: Common Guests & Merchants");
 
         root.Q<Button>("CloseProtocol").clicked += () => protocolDetail.style.display = DisplayStyle.None;
 
@@ -98,10 +95,14 @@ public class MaskUIController : MonoBehaviour
         Debug.Log($"Displaying {element.name}");
     }
 
-    void ShowProtocol(string title, string content)
+    void ShowProtocol(string factionName, Texture2D crestImage)
     {
-        detailTitle.text = title;
-        detailContent.text = content;
+        detailTitle.text = factionName;
+        if (crestImage != null)
+            crestIcon.style.backgroundImage = new StyleBackground(crestImage);
+        else
+            crestIcon.style.backgroundImage = null;
+
         protocolDetail.style.display = DisplayStyle.Flex;
     }
 

@@ -270,6 +270,9 @@ MonoBehaviour:
   manager: {fileID: 2113214202}
   audioSource: {fileID: 380278571}
   hoverSound: {fileID: 8300000, guid: 012fde2ec4ebb5b43b8e64af096747c0, type: 3}
+  crestHouseA: {fileID: 2800000, guid: 8a0ec1237909e3a499b872c470ab08c1, type: 3}
+  crestHouseB: {fileID: 4154780841294389669, guid: 308a8b135f0138440a73de847b65b70a, type: 3}
+  crestGeneral: {fileID: -1008301579157283121, guid: 308a8b135f0138440a73de847b65b70a, type: 3}
 --- !u!82 &380278571
 AudioSource:
   m_ObjectHideFlags: 0
