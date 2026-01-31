@@ -45,6 +45,26 @@ public class MaskUIController : MonoBehaviour
         invitationBtn = root.Q<Button>("InvitationBtn");
         crestLogoLayer = root.Q<VisualElement>("CrestLogoLayer");
         invitationCrestLarge = invitationOverlay.Q<VisualElement>("CrestIconLarge");
+        root = GetComponent<UIDocument>().rootVisualElement;
+        VisualElement screenWrapper = root.Q<VisualElement>("ScreenWrapper");
+        
+        screenWrapper.RegisterCallback<PointerDownEvent>(evt => {
+            VisualElement targetElement = evt.target as VisualElement;
+
+            if (targetElement != null)
+            {
+                // Close overlays if clicking background, curtains, desk, racks, or ceiling
+                if (targetElement == screenWrapper || 
+                    targetElement.name.Contains("Curtain") || 
+                    targetElement.name == "BottomDesk" ||
+                    targetElement.name == "LeftRack" ||
+                    targetElement.name == "RightProtocol" ||
+                    targetElement.name == "Ceiling") 
+                {
+                    CloseAllOverlays();
+                }
+            }
+        }, TrickleDown.NoTrickleDown);
 
         // Bottom Tool Buttons
         root.Q<Button>("LogbookBtn").clicked += () => ShowOverlay(logbookOverlay);
@@ -254,6 +274,12 @@ public class MaskUIController : MonoBehaviour
         {
             audioSource.PlayOneShot(hoverSound);
         }
+    }
+    void CloseAllOverlays()
+    {
+        logbookOverlay.style.display = DisplayStyle.None;
+        invitationOverlay.style.display = DisplayStyle.None;
+        protocolDetail.style.display = DisplayStyle.None;
     }
 
 }
