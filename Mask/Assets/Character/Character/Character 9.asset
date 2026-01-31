@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d2acb28f8cdb77843bfa6e9955aa1d35, type: 3}
+  m_Name: Character 9
+  m_EditorClassIdentifier: Assembly-CSharp::CharacterData
+  characterName: Business
+  correctClass: 1
+  characterPrefab: {fileID: 3004953619544165232, guid: 6e930969164cf0c45a441f393ec27639, type: 3}
+  characterColor: {r: 1, g: 1, b: 1, a: 1}
+  familyCrest: {fileID: 0}
+  isEnemy: 1
+  whatIsWrong: 

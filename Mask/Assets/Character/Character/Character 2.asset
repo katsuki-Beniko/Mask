@@ -10,14 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d2acb28f8cdb77843bfa6e9955aa1d35, type: 3}
-  m_Name: Enemy 1
+  m_Name: Character 2
   m_EditorClassIdentifier: Assembly-CSharp::CharacterData
-  characterName: Enemy nobility
-  correctClass: 0
-  characterPrefab: {fileID: 5359676708210546143, guid: 51e09678f3083b24a84d42e2db63037f, type: 3}
-  characterColor: {r: 0.7830189, g: 0.23268957, b: 0.23268957, a: 1}
-  familyCrest: {fileID: 2800000, guid: 85994bd1f8de23f4ea81b66bdd40a402, type: 3}
-  isEnemy: 1
-  whatIsWrong: 'wrong color
-
-'
+  characterName: Business
+  correctClass: 1
+  characterPrefab: {fileID: 7715009383056512617, guid: a16f81bfdb4dc9149bfcbe6656b2fc6b, type: 3}
+  characterColor: {r: 1, g: 1, b: 1, a: 1}
+  familyCrest: {fileID: 0}
+  isEnemy: 0
+  whatIsWrong: 

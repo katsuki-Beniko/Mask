@@ -151,6 +151,7 @@
     border-width: 4px;
     border-color: #FFD700;
     padding: 20px;
+    picking-mode: position;
 }
 
 .side-header { color: #aaa; font-size: 14px; -unity-font-style: bold; margin-bottom: 10px; }
@@ -162,7 +163,6 @@
     width: 140px;
     height: 60px;
     margin-top: 15px;
-    background-color: #d2b48c; 
     color: #3e2723;
     border-width: 2px;
     border-color: #5d4037;
@@ -170,8 +170,26 @@
 }
 
 .doc-icon:hover {
-    background-color: #f5deb3;
     scale: 1.05;
+}
+
+/* Hide the text by default */
+.hover-label {
+    opacity: 0;
+    transition-property: opacity;
+    transition-duration: 0.2s; /* Smooth fade-in effect */
+    -unity-text-align: middle-center;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.6); /* Optional: Dark background for readability */
+    border-radius: 5px;
+    padding: 5px;
+    pointer-events: none; /* Ensure the text doesn't block the button click */
+}
+
+/* Show the text when the parent button is hovered */
+.desk-tool:hover .hover-label,
+.scroll-item:hover .hover-label {
+    opacity: 1;
 }
 
 /* Container for each scroll and its stand */
@@ -214,6 +232,19 @@
     -unity-background-scale-mode: scale-to-fit;
     width: 150px;
     height: 70px;
+}
+
+/* 1. Ensure the Guest List button itself has no background color or default text visible */
+#LogbookBtn {
+    background-color: rgba(0, 0, 0, 0);
+    border-width: 0;
+}
+
+
+
+/* 4. Optional: Add a slight scale effect to the book when hovered */
+#LogbookBtn:hover {
+    scale: 1.05;
 }
 
 .logbook-entry-text {

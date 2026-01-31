@@ -760,10 +760,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::MasqueradeManager
   spawnPoint: {fileID: 2113214201}
   characterQueue:
-  - {fileID: 11400000, guid: be36fbc830b00c24493abbf76a8e1a2a, type: 2}
-  - {fileID: 11400000, guid: e78dc50bd90b4834e8dc0a260b59de5f, type: 2}
-  - {fileID: 11400000, guid: b647f547a99b5a942b98c5fc72fb4832, type: 2}
-  - {fileID: 11400000, guid: 3f4ecd639d37c6645b14e47d38b4701b, type: 2}
+  - {fileID: 11400000, guid: 2d1547e5d92b5564fb0e37ce2fb8a3fd, type: 2}
+  - {fileID: 11400000, guid: 69f3fd653829e7b4f9b77426ac4d6fde, type: 2}
+  - {fileID: 11400000, guid: 47491d75c9300c44b9a049229c0d168d, type: 2}
+  - {fileID: 11400000, guid: c2862275fb72fdc4093a3f04dcc83129, type: 2}
+  - {fileID: 11400000, guid: 1df82d258b27d634badf13aaf6519134, type: 2}
+  - {fileID: 11400000, guid: 45d2fff7d92b4ea4e9196bba4a55ef36, type: 2}
+  - {fileID: 11400000, guid: 5273bfdd4480fea4f919af073cd1b389, type: 2}
+  - {fileID: 11400000, guid: e446b3fafec814a4aaaf66bcfa09b214, type: 2}
+  - {fileID: 11400000, guid: 15b859187ade47d478fde20d19d82cd1, type: 2}
+  - {fileID: 11400000, guid: 8c6e73719c21e014ba281558e8f02973, type: 2}
   correctRejects: 0
   incorrectRejects: 0
   correctMasks: 0
