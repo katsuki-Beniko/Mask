@@ -16,3 +16,6 @@ MonoBehaviour:
   correctClass: 0
   characterPrefab: {fileID: 5359676708210546143, guid: 51e09678f3083b24a84d42e2db63037f, type: 3}
   characterColor: {r: 1, g: 0.6640022, b: 0, a: 1}
+  familyCrest: {fileID: 2800000, guid: 8a0ec1237909e3a499b872c470ab08c1, type: 3}
+  isEnemy: 0
+  whatIsWrong: 

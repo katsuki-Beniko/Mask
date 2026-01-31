@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 763c06c7cf5f4a542888f72f83a81c91
+guid: 6cfecd9e10f31204da09046bf5ff2301
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -5737862728397843132
-    second: False Crest Noctyrr 5_0
+      213: 8612890386459033023
+    second: Scroll Stand_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -178,13 +178,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: False Crest Noctyrr 5_0
+      name: Scroll Stand_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 768
-        height: 768
+        x: 1724
+        y: 984
+        width: 324
+        height: 76
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -193,8 +193,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 44594efbf340f50b0800000000000000
-      internalID: -5737862728397843132
+      spriteID: fbd74466c22278770800000000000000
+      internalID: 8612890386459033023
       vertices: []
       indices: 
       edges: []
@@ -213,7 +213,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      False Crest Noctyrr 5_0: -5737862728397843132
+      Scroll Stand_0: 8612890386459033023
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

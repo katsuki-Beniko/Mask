@@ -100,13 +100,15 @@
     justify-content: center;
     align-items: center;
     background-color: transparent; 
+    picking-mode: ignore;
 }
 
 .mask-circle {
     width: 80px;
     height: 80px;
     border-radius: 40px;
-    position: absolute; 
+    position: absolute;
+    picking-mode: position;
 }
 
 .nobility { background-color: #FFD700; }
@@ -132,7 +134,6 @@
     width: 140px;
     height: 80px;
     margin: 0 15px;
-    background-color: #4a4a4a;
     color: white;
     -unity-font-style: bold;
 }
@@ -173,17 +174,64 @@
     scale: 1.05;
 }
 
-.protocol-detail-hidden {
-    display: none;
+/* Container for each scroll and its stand */
+.scroll-slot {
+    width: 180px;
+    height: 100px;
+    margin-bottom: 30px;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+/* Common stand properties */
+.scroll-stand-back, .scroll-stand-front {
     position: absolute;
-    right: 230px; 
-    top: 50px;
-    width: 350px;
-    min-height: 400px;
-    background-image: url("project://database/Assets/Images/invitation example page.png");
-    border-width: 3px;
-    border-color: #8b4513;
-    padding: 15px;
+    width: 100%;
+    height: 100%;
+    -unity-background-scale-mode: scale-to-fit;
+    picking-mode: ignore; /* Important: Allows clicking the button underneath */
+}
+
+/* Layer 1: The stand pole behind the scroll */
+.scroll-stand-back {
+    background-image: url('project://database/Assets/Images/Scroll Stand.png');
+    z-index: -1;
+}
+
+/* Layer 3: The hooks in front of the scroll */
+.scroll-stand-front {
+    background-image: url('project://database/Assets/Images/Scroll Stand Front.png');
+    z-index: 1;
+}
+
+/* Adjust the button (the scroll itself) to fit the stand */
+.scroll-item {
+    margin-top: 0;
+    background-color: rgba(0, 0, 0, 0); /* Transparent button background */
+    border-width: 0;
+    background-image: url('project://database/Assets/Images/Invitation example.png');
+    -unity-background-scale-mode: scale-to-fit;
+    width: 150px;
+    height: 70px;
+}
+
+.logbook-entry-text {
+    width: 48%; /* Creates a 2x2 grid inside each column */
+    height: 45%;
+    margin: 1%;
+    padding: 10px;
+    font-size: 16px;
+    color: #3e2723; /* Dark ink color */
+    white-space: normal;
+    border-width: 1px;
+    border-color: rgba(62, 39, 35, 0.2);
+    -unity-font-definition: url("project://database/Assets/Font%20style/mrdafoe-bower-master/MrDafoe-Regular.ttf");
+}
+
+.logbook-grid {
+    justify-content: space-around;
+    align-content: space-around;
 }
 
 

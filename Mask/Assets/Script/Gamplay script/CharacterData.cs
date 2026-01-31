@@ -8,6 +8,7 @@ public class CharacterData : ScriptableObject
     public CharacterClass correctClass;
     public GameObject characterPrefab;
     public Color characterColor = Color.white;
+    public Texture2D familyCrest;
     public bool isEnemy; 
     [TextArea] public string whatIsWrong; // For your own notes on the "tell" 
 }

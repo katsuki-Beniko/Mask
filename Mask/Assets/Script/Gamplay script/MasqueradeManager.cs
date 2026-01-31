@@ -27,7 +27,8 @@ public class MasqueradeManager : MonoBehaviour
             CharacterData data = characterQueue[currentIdx];
             currentCharacterInstance = Instantiate(data.characterPrefab, spawnPoint.position, Quaternion.identity);
             currentCharacterInstance.transform.SetParent(spawnPoint);
-
+            bool isNobility = (data.correctClass == CharacterData.CharacterClass.Nobility);
+            uiController.UpdateNobilityUI(isNobility, data.familyCrest);
             SpriteRenderer renderer = currentCharacterInstance.GetComponentInChildren<SpriteRenderer>();
             if (renderer != null) renderer.color = data.characterColor;
 

@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 55e5b7ae9b1437745b6b9c29b9f471f4
+guid: 85994bd1f8de23f4ea81b66bdd40a402
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 64276194631579468
-    second: False Crest Noctyrr 4_0
+      213: -384397837736356129
+    second: House Eswyn Crest Wrong_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -178,13 +178,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: False Crest Noctyrr 4_0
+      name: House Eswyn Crest Wrong_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 768
-        height: 768
+        x: 87
+        y: 57
+        width: 597
+        height: 669
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -193,8 +193,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: c477784cbda54e000800000000000000
-      internalID: 64276194631579468
+      spriteID: fd6db4504385aaaf0800000000000000
+      internalID: -384397837736356129
       vertices: []
       indices: 
       edges: []
@@ -213,7 +213,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      False Crest Noctyrr 4_0: 64276194631579468
+      House Eswyn Crest Wrong_0: -384397837736356129
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

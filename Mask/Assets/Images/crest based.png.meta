@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: ae42ae5fd9253224ba96e07968181043
+guid: ecc54342859143947903a98cfdce97e3
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 9093515793799349766
-    second: False Crest Noctyrr 3_0
+      213: 7973706922813589144
+    second: crest based_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -178,13 +178,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: False Crest Noctyrr 3_0
+      name: crest based_0
       rect:
         serializedVersion: 2
-        x: 87
-        y: 57
-        width: 681
-        height: 699
+        x: 35
+        y: 34
+        width: 698
+        height: 697
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -193,8 +193,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 60680d85f68a23e70800000000000000
-      internalID: 9093515793799349766
+      spriteID: 8968065233c48ae60800000000000000
+      internalID: 7973706922813589144
       vertices: []
       indices: 
       edges: []
@@ -213,7 +213,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      False Crest Noctyrr 3_0: 9093515793799349766
+      crest based_0: 7973706922813589144
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
