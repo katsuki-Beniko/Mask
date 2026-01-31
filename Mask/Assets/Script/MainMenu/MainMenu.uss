@@ -1,0 +1,18 @@
+:root {
+}
+
+.panel {
+}
+
+.hide {
+    display: none;
+}
+
+.container {
+}
+
+.Shine {
+    text-shadow: 0 0 3px rgba(255, 255, 255, 0.6);
+    -unity-text-outline-width: 3px;
+    -unity-text-outline-color: rgba(255,255,255,0.5);
+}
