@@ -1,0 +1,17 @@
+{
+    "name": "mrdafoe-googlefont",
+    "license": "OFL",
+    "authors": [
+        "Sudtipos"
+    ],
+    "homepage": "https://fonts.google.com/",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/google-fonts-bower/mrdafoe-bower.git"
+    },
+    "description": "Mr Dafoe font",
+    "keywords": [
+        "font",
+        "HANDWRITING"
+    ]
+}

@@ -15,31 +15,29 @@
 
 #RightProtocol { right: 0; width: 220px; border-left-width: 2px; border-color: #444; }
 
-/* Sidebar should handle the vertical spacing */
 #LeftRack {
     left: 0;
     width: 160px;
     background-color: rgba(30, 30, 30, 0.8);
-    padding: 20px 0; /* Add top padding here */
+    padding: 20px 0; 
     flex-direction: column;
     align-items: center;
 }
 
-/* Make the slots just big enough for the masks */
 .mask-slot {
     width: 90px;
     height: 90px;
-    margin-bottom: 10px; /* Adjust this to make masks closer or further */
+    margin-bottom: 10px; 
     justify-content: center;
     align-items: center;
-    background-color: transparent; /* Keep it invisible */
+    background-color: transparent; 
 }
 
 .mask-circle {
     width: 80px;
     height: 80px;
     border-radius: 40px;
-    position: absolute; /* Essential for dragging */
+    position: absolute; 
 }
 
 .nobility { background-color: #FFD700; }
@@ -89,12 +87,12 @@
 .popup-header { color: gold; font-size: 20px; -unity-font-style: bold; border-bottom-width: 1px; border-color: gold; }
 .popup-body { color: white; margin-top: 15px; white-space: normal; }
 
-/* Styling for the letter icons in the sidebar */
+
 .doc-icon {
     width: 140px;
     height: 60px;
     margin-top: 15px;
-    background-color: #d2b48c; /* Paper color */
+    background-color: #d2b48c; 
     color: #3e2723;
     border-width: 2px;
     border-color: #5d4037;
@@ -139,3 +137,43 @@
 .grade-failure { color: #FF0000; } 
 .result-label { color: #ccc; font-size: 16px; }
 .result-value { color: gold; font-size: 18px; -unity-font-style: bold; }
+
+
+.pause-overlay {
+    display: none;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    justify-content: center;
+    align-items: center;
+}
+
+.pause-frame {
+    width: 800px;  /* Adjust size to match your original image aspect ratio */
+    height: 600px;
+    padding: 40px;
+    background-image: url('project://database/Assets/Images/PauseMenu_Background.png');
+    
+    /* Change 'stretch-to-fill' to 'scale-to-fit' to prevent distortion */
+    -unity-background-scale-mode: scale-to-fit; 
+    
+    align-items: center;
+    justify-content: center;
+}
+.pause-header {
+    font-size: 60px;
+    color: white;
+    -unity-font-style: bold;
+    margin-bottom: 20px;
+}
+
+.pause-btn {
+    width: 200px;
+    height: 60px;
+    margin: 10px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-color: white;
+    color: white;
+    
+}

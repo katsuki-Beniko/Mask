@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.UIElements;
+using UnityEngine.InputSystem;
 
 public class MaskUIController : MonoBehaviour
 {
@@ -11,6 +12,8 @@ public class MaskUIController : MonoBehaviour
     private Label detailTitle;
     private Label detailContent;
     private VisualElement resultScreen;
+    private VisualElement pauseMenu;
+    private bool isPaused = false;
 
     void OnEnable()
     {
@@ -54,6 +57,24 @@ public class MaskUIController : MonoBehaviour
 
         resultScreen = root.Q<VisualElement>("ResultScreen");
         root.Q<Button>("RestartBtn").clicked += () => UnityEngine.SceneManagement.SceneManager.LoadScene(0);
+        pauseMenu = root.Q<VisualElement>("PauseMenu");
+        if (pauseMenu != null)
+        {
+            root.Q<Button>("ResumeBtn").clicked += TogglePause;
+
+            // RESTART: Reloads the current scene
+            root.Q<Button>("RestartGameBtn").clicked += () => {
+                Time.timeScale = 1; // Unfreeze time before reloading!
+                UnityEngine.SceneManagement.SceneManager.LoadScene(
+                    UnityEngine.SceneManagement.SceneManager.GetActiveScene().buildIndex);
+            };
+
+            // MAIN MENU: Loads scene index 0 (assuming your menu is index 0)
+            root.Q<Button>("MainMenuBtn").clicked += () => {
+                Time.timeScale = 1;
+                UnityEngine.SceneManagement.SceneManager.LoadScene(0); 
+            };
+        }
     }
 
     void ShowOverlay(VisualElement element)
@@ -95,49 +116,67 @@ public class MaskUIController : MonoBehaviour
         element.style.display = DisplayStyle.None;
     }
 
-void SetupMaskDrag(string id, CharacterData.CharacterClass maskClass)
-{
-    VisualElement mask = root.Q<VisualElement>(id);
-    Vector2 offset = Vector2.zero;
-    bool isDragging = false;
+    void SetupMaskDrag(string id, CharacterData.CharacterClass maskClass)
+    {
+        VisualElement mask = root.Q<VisualElement>(id);
+        Vector2 offset = Vector2.zero;
+        bool isDragging = false;
 
-    mask.RegisterCallback<PointerDownEvent>(evt => {
-        isDragging = true;
-        
-        // Calculate the distance between the mouse and the top-left of the mask
-        offset = evt.localPosition; 
-        
-        mask.CapturePointer(evt.pointerId);
-        mask.BringToFront(); 
-    });
+        mask.RegisterCallback<PointerDownEvent>(evt => {
+            isDragging = true;
+            
+            // Calculate the distance between the mouse and the top-left of the mask
+            offset = evt.localPosition; 
+            
+            mask.CapturePointer(evt.pointerId);
+            mask.BringToFront(); 
+        });
 
-    mask.RegisterCallback<PointerMoveEvent>(evt => {
-        if (!isDragging) return;
+        mask.RegisterCallback<PointerMoveEvent>(evt => {
+            if (!isDragging) return;
 
-        // Use world position (evt.position) instead of local position
-        // This stops the 'jumping' when dragging across the screen
-        mask.style.left = evt.position.x - mask.parent.worldBound.x - offset.x;
-        mask.style.top = evt.position.y - mask.parent.worldBound.y - offset.y;
-    });
+            // Use world position (evt.position) instead of local position
+            // This stops the 'jumping' when dragging across the screen
+            mask.style.left = evt.position.x - mask.parent.worldBound.x - offset.x;
+            mask.style.top = evt.position.y - mask.parent.worldBound.y - offset.y;
+        });
 
-    mask.RegisterCallback<PointerUpEvent>(evt => {
-        if (!isDragging) return;
-        isDragging = false;
-        mask.ReleasePointer(evt.pointerId);
+        mask.RegisterCallback<PointerUpEvent>(evt => {
+            if (!isDragging) return;
+            isDragging = false;
+            mask.ReleasePointer(evt.pointerId);
 
-        // Standard hit detection for the guest
-        Vector2 screenPos = new Vector2(evt.position.x, Screen.height - evt.position.y);
-        Ray ray = Camera.main.ScreenPointToRay(screenPos);
-        RaycastHit2D hit = Physics2D.Raycast(ray.origin, ray.direction);
+            // Standard hit detection for the guest
+            Vector2 screenPos = new Vector2(evt.position.x, Screen.height - evt.position.y);
+            Ray ray = Camera.main.ScreenPointToRay(screenPos);
+            RaycastHit2D hit = Physics2D.Raycast(ray.origin, ray.direction);
 
-        if (hit.collider != null && hit.collider.CompareTag("Guest"))
+            if (hit.collider != null && hit.collider.CompareTag("Guest"))
+            {
+                manager.CheckMask(maskClass);
+            }
+
+            // Snap back to its home slot
+            mask.style.left = StyleKeyword.Null;
+            mask.style.top = StyleKeyword.Null;
+        });
+    }
+    void Update()
+    {
+        // Use the New Input System check
+        if (Keyboard.current != null && Keyboard.current.escapeKey.wasPressedThisFrame)
         {
-            manager.CheckMask(maskClass);
+            TogglePause();
         }
+    }
 
-        // Snap back to its home slot
-        mask.style.left = StyleKeyword.Null;
-        mask.style.top = StyleKeyword.Null;
-    });
-}
+    void TogglePause()
+    {
+        isPaused = !isPaused;
+        pauseMenu.style.display = isPaused ? DisplayStyle.Flex : DisplayStyle.None;
+        
+        // Freeze or unfreeze the game time
+        Time.timeScale = isPaused ? 0 : 1;
+    }
+
 }

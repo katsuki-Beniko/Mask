@@ -1,0 +1,17 @@
+{
+    "name": "monsieurladoulaise-googlefont",
+    "license": "OFL",
+    "authors": [
+        "Sudtipos"
+    ],
+    "homepage": "https://fonts.google.com/",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/google-fonts-bower/monsieurladoulaise-bower.git"
+    },
+    "description": "Monsieur La Doulaise font",
+    "keywords": [
+        "font",
+        "HANDWRITING"
+    ]
+}
