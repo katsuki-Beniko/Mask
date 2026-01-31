@@ -65,8 +65,7 @@
                 <ui:Label text="FINAL EVALUATION" class="side-header"/>
                 <ui:Label name="GradeValue" text="---" class="grade-text"/>
             </ui:VisualElement>
-            <ui:Button name="RestartBtn" text="NEXT NIGHT" class="close-btn"/>
-        </ui:VisualElement>
+            <ui:Button name="FinishBtn" text="FINISH" class="close-btn" style="margin-top: 20px;"/>        </ui:VisualElement>
         <ui:VisualElement name="LeftRack" class="sidebar" style="top: 0; left: 1px; background-color: rgba(30, 30, 30, 0); width: 230px;">
             <ui:Label text="Masks" selectable="false" focusable="false" class="side-header" style="-unity-font-definition: url(&quot;project://database/Assets/Font%20style/mrdafoe-bower-master/MrDafoe-Regular.ttf?fileID=12800000&amp;guid=df019b53e3aeef841b07cd38f3668ad0&amp;type=3#MrDafoe-Regular&quot;); font-size: 25px; height: 34px;"/>
             <ui:VisualElement name="VisualElement" class="mask-slot" style="background-image: none; margin-top: 136px; margin-right: 45px; width: 90px;">

@@ -91,7 +91,16 @@ public class MaskUIController : MonoBehaviour
         root.Q<Button>("CloseProtocol").clicked += () => protocolDetail.style.display = DisplayStyle.None;
 
         resultScreen = root.Q<VisualElement>("ResultScreen");
-        root.Q<Button>("RestartBtn").clicked += () => UnityEngine.SceneManagement.SceneManager.LoadScene(0);
+        Button finishBtn = root.Q<Button>("FinishBtn");
+        if (finishBtn != null)
+        {
+            finishBtn.clicked += () => {
+                Time.timeScale = 1; // Ensure time is unfrozen
+                UnityEngine.SceneManagement.SceneManager.LoadScene(0); 
+            };
+            // Also add the hover sound for consistency
+            SetupButtonHover("FinishBtn");
+        }
         pauseMenu = root.Q<VisualElement>("PauseMenu");
         if (pauseMenu != null)
         {
