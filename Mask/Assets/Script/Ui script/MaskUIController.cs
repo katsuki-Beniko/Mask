@@ -5,6 +5,8 @@ using UnityEngine.InputSystem;
 public class MaskUIController : MonoBehaviour
 {
     public MasqueradeManager manager;
+    public AudioSource audioSource; 
+    public AudioClip hoverSound;   
     private VisualElement root;
     private VisualElement logbookOverlay;
     private VisualElement invitationOverlay;
@@ -13,11 +15,24 @@ public class MaskUIController : MonoBehaviour
     private Label detailContent;
     private VisualElement resultScreen;
     private VisualElement pauseMenu;
-    private bool isPaused = false;
+    private bool isPaused = false; 
 
     void OnEnable()
     {
         root = GetComponent<UIDocument>().rootVisualElement;
+
+        // --- Existing Button Logic ---
+        SetupButtonHover("ResumeBtn");
+        SetupButtonHover("RestartGameBtn");
+        SetupButtonHover("MainMenuBtn");
+        SetupButtonHover("LogbookBtn");
+        SetupButtonHover("InvitationBtn");
+        SetupButtonHover("KickButton");
+        
+        // Protocol Buttons
+        SetupButtonHover("ProtocolHouseA");
+        SetupButtonHover("ProtocolHouseB");
+        SetupButtonHover("ProtocolGeneral");
 
         // Overlay References
         logbookOverlay = root.Q<VisualElement>("LogbookOverlay");
@@ -177,6 +192,24 @@ public class MaskUIController : MonoBehaviour
         
         // Freeze or unfreeze the game time
         Time.timeScale = isPaused ? 0 : 1;
+    }
+
+    // New helper method to attach hover sounds
+    void SetupButtonHover(string buttonName)
+    {
+        Button btn = root.Q<Button>(buttonName);
+        if (btn != null)
+        {
+            btn.RegisterCallback<PointerEnterEvent>(evt => PlayHoverSound());
+        }
+    }
+
+    void PlayHoverSound()
+    {
+        if (audioSource != null && hoverSound != null)
+        {
+            audioSource.PlayOneShot(hoverSound);
+        }
     }
 
 }
