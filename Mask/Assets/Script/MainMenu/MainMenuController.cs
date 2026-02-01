@@ -137,7 +137,6 @@ public class MainMenuController : MonoBehaviour
 
     private void OnTutoButtonClicked()
     {
-        Debug.Log("Tutorial");
         LoadNewPage("tutorial");
     }
 
