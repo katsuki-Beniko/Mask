@@ -18,17 +18,17 @@
         </ui:VisualElement>
         <ui:VisualElement name="RightProtocol" class="sidebar" style="width: 230px; background-color: rgba(30, 30, 30, 0);">
             <ui:Label text="" class="side-header" style="-unity-font-definition: url(&quot;project://database/Assets/Font%20style/mrdafoe-bower-master/MrDafoe-Regular.ttf?fileID=12800000&amp;guid=df019b53e3aeef841b07cd38f3668ad0&amp;type=3#MrDafoe-Regular&quot;); font-size: 25px; height: 33px; margin-bottom: 206px;"/>
-            <ui:VisualElement class="scroll-slot">
+            <ui:VisualElement name="VisualElement" class="scroll-slot">
                 <ui:VisualElement class="scroll-stand-back" style="width: 198px; height: 114px; top: -27px; left: 6px;"/>
                 <ui:Button name="ProtocolHouseA" class="doc-icon scroll-item" style="width: 230px; height: 136px; background-size: 100% 100%; position: absolute; top: -54px; left: -35px;">
-                    <ui:Label text="House A" name="Label" class="hover-label" style="-unity-font-definition: url(&quot;project://database/Assets/Font%20style/mrdafoe-bower-master/MrDafoe-Regular.ttf?fileID=12800000&amp;guid=df019b53e3aeef841b07cd38f3668ad0&amp;type=3#MrDafoe-Regular&quot;); font-size: 40px;"/>
+                    <ui:Label text="House Eswyn" name="Label" class="hover-label" style="-unity-font-definition: url(&quot;project://database/Assets/Font%20style/mrdafoe-bower-master/MrDafoe-Regular.ttf?fileID=12800000&amp;guid=df019b53e3aeef841b07cd38f3668ad0&amp;type=3#MrDafoe-Regular&quot;); font-size: 40px;"/>
                 </ui:Button>
                 <ui:VisualElement picking-mode="Ignore" class="scroll-stand-front" style="top: -9px; left: 7px;"/>
             </ui:VisualElement>
             <ui:VisualElement name="VisualElement" class="scroll-slot" style="top: 156px;">
                 <ui:VisualElement class="scroll-stand-back" style="width: 198px; height: 114px; top: -27px; left: 6px;"/>
                 <ui:Button name="ProtocolHouseB" class="doc-icon scroll-item" style="width: 230px; height: 136px; background-size: 100% 100%; position: absolute; top: -51px; left: -29px;">
-                    <ui:Label text="House B" class="hover-label" style="-unity-font-definition: url(&quot;project://database/Assets/Font%20style/mrdafoe-bower-master/MrDafoe-Regular.ttf?fileID=12800000&amp;guid=df019b53e3aeef841b07cd38f3668ad0&amp;type=3#MrDafoe-Regular&quot;); font-size: 40px;"/>
+                    <ui:Label text="House Noctyrr" name="Label" class="hover-label" style="-unity-font-definition: url(&quot;project://database/Assets/Font%20style/mrdafoe-bower-master/MrDafoe-Regular.ttf?fileID=12800000&amp;guid=df019b53e3aeef841b07cd38f3668ad0&amp;type=3#MrDafoe-Regular&quot;); font-size: 40px;"/>
                 </ui:Button>
                 <ui:VisualElement picking-mode="Ignore" class="scroll-stand-front" style="top: -9px; left: 7px;"/>
             </ui:VisualElement>
@@ -42,7 +42,7 @@
             <ui:VisualElement name="CrestIconLarge" style="height: 350px; width: 350px; -unity-background-scale-mode: scale-to-fit; background-color: rgba(0, 0, 0, 0);"/>
         </ui:VisualElement>
         <ui:VisualElement name="ResultScreen" picking-mode="Ignore" class="popup-panel" style="display: none; background-image: url(&quot;project://database/Assets/Images/invitation%20example%20page.png?fileID=2800000&amp;guid=aa2715416d4786a4992d7537793ca665&amp;type=3#invitation example page&quot;); background-color: rgba(26, 26, 26, 0); border-left-color: rgba(255, 215, 0, 0); border-right-color: rgba(255, 215, 0, 0); border-top-color: rgba(255, 215, 0, 0); border-bottom-color: rgba(255, 215, 0, 0);">
-            <ui:Label text="NIGHTLY SUMMARY" class="popup-header"/>
+            <ui:Label text="NIGHTLY SUMMARY" class="popup-header" style="-unity-font-definition: url(&quot;project://database/Assets/TextMesh%20Pro/Examples%20&amp;%20Extras/Fonts/Oswald-Bold.ttf?fileID=12800000&amp;guid=c9f6d0e7bc8541498c9a4799ba184ede&amp;type=3#Oswald-Bold&quot;);"/>
             <ui:VisualElement class="result-row">
                 <ui:Label text="Correct Rejects:" class="result-label" style="color: rgb(0, 0, 0);"/>
                 <ui:Label name="CorrectRejectsVal" text="0" class="result-value" style="color: rgb(0, 0, 0);"/>
@@ -63,7 +63,7 @@
                 <ui:Label text="FINAL EVALUATION" class="side-header" style="color: rgb(0, 0, 0);"/>
                 <ui:Label name="GradeValue" text="---" class="grade-text"/>
             </ui:VisualElement>
-            <ui:Button name="FinishBtn" text="FINISH" class="close-btn" style="margin-top: 20px;"/>
+            <ui:Button name="FinishBtn" text="Back to main menu" class="close-btn" style="margin-top: 20px; background-color: rgba(188, 188, 188, 0); -unity-font-definition: url(&quot;project://database/Assets/Font%20style/unifrakturmaguntia-bower-master/UnifrakturMaguntia-Book.ttf?fileID=12800000&amp;guid=17986a949932a684ca104de5527ca3ba&amp;type=3#UnifrakturMaguntia-Book&quot;); font-size: 25px;"/>
         </ui:VisualElement>
         <ui:VisualElement name="LeftRack" class="sidebar" style="top: 0; left: 1px; background-color: rgba(30, 30, 30, 0); width: 230px;">
             <ui:VisualElement name="VisualElement" class="mask-slot" style="background-image: none; margin-top: 181px; margin-right: 45px; width: 90px;">
@@ -86,21 +86,20 @@
             <ui:Label text="GUEST  PROTOCOLS" class="popup-header" style="font-size: 40px; -unity-text-align: middle-center; margin-bottom: 20px; -unity-font-definition: url(&quot;project://database/Assets/Font%20style/mrdafoe-bower-master/MrDafoe-Regular.ttf?fileID=12800000&amp;guid=df019b53e3aeef841b07cd38f3668ad0&amp;type=3#MrDafoe-Regular&quot;);"/>
             <ui:VisualElement name="MainContent" style="flex-direction: row; flex-grow: 1;">
                 <ui:VisualElement name="BoysColumn" style="flex-grow: 1; padding: 10px; border-right-width: 2px; border-color: rgba(0, 0, 0, 0.5);">
-                    <ui:Label text="BOYS" style="font-size: 30px; -unity-font-style: bold; -unity-text-align: middle-center; color: rgb(62, 39, 35); margin-bottom: 10px; -unity-font-definition: url(&quot;project://database/Assets/Font%20style/mrdafoe-bower-master/MrDafoe-Regular.ttf?fileID=12800000&amp;guid=df019b53e3aeef841b07cd38f3668ad0&amp;type=3#MrDafoe-Regular&quot;);"/>
+                    <ui:Label text="Apperance" style="font-size: 30px; -unity-font-style: bold; -unity-text-align: middle-center; color: rgb(62, 39, 35); margin-bottom: 10px; -unity-font-definition: url(&quot;project://database/Assets/Font%20style/mrdafoe-bower-master/MrDafoe-Regular.ttf?fileID=12800000&amp;guid=df019b53e3aeef841b07cd38f3668ad0&amp;type=3#MrDafoe-Regular&quot;);"/>
                     <ui:VisualElement class="logbook-grid" style="flex-wrap: wrap; flex-direction: row; flex-grow: 1;">
-                        <ui:Label text="House Eswyn:&#10;1. Red eye (no highlight)&#10;2. Red Earring&#10;3. Must have rose&#10;4. Eswyn Crest" class="logbook-entry-text" style="font-size: 35px;"/>
-                        <ui:Label text="House Noctyrr:&#10;1. Star eye shape&#10;2. Yellow Earring&#10;3. Moon + Star Earring&#10;4. Noctyrr Crest" class="logbook-entry-text" style="font-size: 35px;"/>
-                        <ui:Label text="Business:&#10;1. Black Eyes&#10;2. Gold Accessory" class="logbook-entry-text" style="font-size: 35px;"/>
-                        <ui:Label text="Celebrity:&#10;1. Blue Eyes&#10;2. Blind / Fashion style" class="logbook-entry-text" style="font-size: 35px;"/>
+                        <ui:Label text="House Eswyn:&#10;1. Red eye (no highlight)&#10;2. Red color diamond&#10;3. Must have rose&#10;4. must have Eswyn Crest&#10;5. girl&apos;s hair fully tied" class="logbook-entry-text" style="font-size: 35px; -unity-font-definition: url(&quot;project://database/Assets/TextMesh%20Pro/Examples%20&amp;%20Extras/Fonts/Bangers.ttf?fileID=12800000&amp;guid=5dd49b3eacc540408c98eee0de38e0f1&amp;type=3#Bangers&quot;); -unity-font-style: normal; -unity-text-align: upper-left; text-overflow: ellipsis;"/>
+                        <ui:Label text="House Noctyrr:&#10;1. Star eye shape&#10;2. Yellow color diamond&#10;3. Moon + Star diamond shape&#10;4. must have Noctyrr Crest&#10;5. girl&apos;s hair semi tied" class="logbook-entry-text" style="font-size: 35px; -unity-font-definition: url(&quot;project://database/Assets/TextMesh%20Pro/Examples%20&amp;%20Extras/Fonts/Bangers.ttf?fileID=12800000&amp;guid=5dd49b3eacc540408c98eee0de38e0f1&amp;type=3#Bangers&quot;);"/>
+                        <ui:Label text="Business:&#10;1. Black Eyes&#10;2. Gold color Accessory" class="logbook-entry-text" style="font-size: 35px; -unity-font-definition: url(&quot;project://database/Assets/TextMesh%20Pro/Examples%20&amp;%20Extras/Fonts/Bangers.ttf?fileID=12800000&amp;guid=5dd49b3eacc540408c98eee0de38e0f1&amp;type=3#Bangers&quot;);"/>
+                        <ui:Label text="Celebrity :&#10;1. Blind singer&#10;2. Fashion designer with blue eye" class="logbook-entry-text" style="font-size: 35px; -unity-font-definition: url(&quot;project://database/Assets/TextMesh%20Pro/Examples%20&amp;%20Extras/Fonts/Bangers.ttf?fileID=12800000&amp;guid=5dd49b3eacc540408c98eee0de38e0f1&amp;type=3#Bangers&quot;);"/>
                     </ui:VisualElement>
                 </ui:VisualElement>
                 <ui:VisualElement name="GirlsColumn" style="flex-grow: 1; padding: 10px;">
-                    <ui:Label text="GIRLS" style="font-size: 30px; -unity-font-style: bold; -unity-text-align: middle-center; color: rgb(62, 39, 35); margin-bottom: 10px; -unity-font-definition: url(&quot;project://database/Assets/Font%20style/mrdafoe-bower-master/MrDafoe-Regular.ttf?fileID=12800000&amp;guid=df019b53e3aeef841b07cd38f3668ad0&amp;type=3#MrDafoe-Regular&quot;);"/>
+                    <ui:Label text="About   Mask" style="font-size: 30px; -unity-font-style: bold; -unity-text-align: middle-center; color: rgb(62, 39, 35); margin-bottom: 10px; -unity-font-definition: url(&quot;project://database/Assets/Font%20style/mrdafoe-bower-master/MrDafoe-Regular.ttf?fileID=12800000&amp;guid=df019b53e3aeef841b07cd38f3668ad0&amp;type=3#MrDafoe-Regular&quot;);"/>
                     <ui:VisualElement class="logbook-grid" style="flex-wrap: wrap; flex-direction: row; flex-grow: 1;">
-                        <ui:Label text="House Eswyn:&#10;1. Red eye (no highlight)&#10;2. Red Earring&#10;3. Hair fully tied&#10;4. Must have rose&#10;5. Eswyn Crest" class="logbook-entry-text" style="font-size: 35px;"/>
-                        <ui:Label text="House Noctyrr:&#10;1. Star eye shape&#10;2. Yellow Earring&#10;3. Hair semi tied&#10;4. Moon + Star Earring&#10;5. Noctyrr Crest" class="logbook-entry-text" style="font-size: 35px;"/>
-                        <ui:Label text="Business:&#10;1. Black Eyes&#10;2. Gold Accessory" class="logbook-entry-text" style="font-size: 35px;"/>
-                        <ui:Label text="Celebrity:&#10;1. Blue Eyes&#10;2. Blind / Fashion style" class="logbook-entry-text" style="font-size: 35px;"/>
+                        <ui:Label text="Yellow Mask&#10;-Give to Nobility&#10;&#10;Nobility invited:&#10;1. House Eswyn&#10;2. House Noctyrr" class="logbook-entry-text" style="font-size: 35px; -unity-font-definition: url(&quot;project://database/Assets/TextMesh%20Pro/Examples%20&amp;%20Extras/Fonts/Bangers.ttf?fileID=12800000&amp;guid=5dd49b3eacc540408c98eee0de38e0f1&amp;type=3#Bangers&quot;);"/>
+                        <ui:Label text="green mask&#10;- give to Business guest" class="logbook-entry-text" style="font-size: 35px; -unity-font-definition: url(&quot;project://database/Assets/TextMesh%20Pro/Examples%20&amp;%20Extras/Fonts/Bangers.ttf?fileID=12800000&amp;guid=5dd49b3eacc540408c98eee0de38e0f1&amp;type=3#Bangers&quot;);"/>
+                        <ui:Label text="purple mask&#10;- give to celerity guest" class="logbook-entry-text" style="font-size: 35px; -unity-font-definition: url(&quot;project://database/Assets/TextMesh%20Pro/Examples%20&amp;%20Extras/Fonts/Bangers.ttf?fileID=12800000&amp;guid=5dd49b3eacc540408c98eee0de38e0f1&amp;type=3#Bangers&quot;);"/>
                     </ui:VisualElement>
                 </ui:VisualElement>
             </ui:VisualElement>

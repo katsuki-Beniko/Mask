@@ -74,8 +74,8 @@ public class MaskUIController : MonoBehaviour
         // Kick Button
         root.Q<Button>("KickButton").clicked += () => manager.KickCharacter();
 
-        root.Q<Button>("ProtocolHouseA").clicked += () => ShowProtocol("Nobility House A", crestHouseA);
-        root.Q<Button>("ProtocolHouseB").clicked += () => ShowProtocol("Nobility House B", crestHouseB);
+        root.Q<Button>("ProtocolHouseA").clicked += () => ShowProtocol("House Eswyn", crestHouseA);
+        root.Q<Button>("ProtocolHouseB").clicked += () => ShowProtocol("House Noctyrr", crestHouseB);
 
         // Setup Dragging for masks (Existing Logic)
         SetupMaskDrag("NobilityMask", CharacterData.CharacterClass.Nobility);
