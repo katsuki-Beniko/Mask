@@ -142,7 +142,7 @@ public class MainMenuController : MonoBehaviour
 
     private void OnStartButtonClicked()
     {
-        Debug.Log("Start");
+        LoadNewPage("Story");
     }
 
     private void ShowSettings()

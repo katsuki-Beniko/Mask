@@ -70,9 +70,6 @@ public class MaskUIController : MonoBehaviour
         root.Q<Button>("LogbookBtn").clicked += () => ShowOverlay(logbookOverlay);
         root.Q<Button>("InvitationBtn").clicked += () => ShowOverlay(invitationOverlay);
         
-        // Close Buttons
-        root.Q<Button>("CloseLogbook").clicked += () => HideOverlay(logbookOverlay);
-        root.Q<Button>("CloseInvite").clicked += () => HideOverlay(invitationOverlay);
 
         // Kick Button
         root.Q<Button>("KickButton").clicked += () => manager.KickCharacter();
@@ -88,7 +85,6 @@ public class MaskUIController : MonoBehaviour
         protocolDetail = root.Q<VisualElement>("ProtocolDetailView");
         detailTitle = root.Q<Label>("DetailTitle");
 
-        root.Q<Button>("CloseProtocol").clicked += () => protocolDetail.style.display = DisplayStyle.None;
 
         resultScreen = root.Q<VisualElement>("ResultScreen");
         Button finishBtn = root.Q<Button>("FinishBtn");

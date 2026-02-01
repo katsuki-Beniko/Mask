@@ -1,0 +1,10 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <ui:VisualElement name="ScreenWrapper" picking-mode="Position" style="flex-grow: 1;">
+        <ui:VisualElement name="Moment0" class="story-image" style="opacity: 0; transition-duration: 1s; top: 55px; left: 1px; width: 813px; height: 566px; background-image: url(&quot;project://database/Assets/Images/first%20image%20story.png?fileID=2800000&amp;guid=f2cf4d3f3ff060446970da897b654f57&amp;type=3#first image story&quot;); position: absolute;"/>
+        <ui:VisualElement name="Moment1" class="story-image" style="opacity: 0; transition-duration: 1s; bottom: 186px; right: -1px; width: 766px; height: 551px; position: absolute; background-image: url(&quot;project://database/Assets/Images/Second%20image%20story.png?fileID=2800000&amp;guid=9d77e9d25925b2446bcc0d4f1750b8c0&amp;type=3#Second image story&quot;);"/>
+        <ui:VisualElement name="Moment2" class="story-image" style="opacity: 0; transition-duration: 1s; top: 149px; left: 516px; width: 858px; height: 605px; position: absolute; background-image: url(&quot;project://database/Assets/Images/third%20image%20story.png?fileID=2800000&amp;guid=62f601646066ff84d96059baec989d8a&amp;type=3#third image story&quot;);"/>
+        <ui:VisualElement name="NarratorContainer" style="position: absolute; bottom: 38px; width: 1236px; height: 255px; align-self: center; background-image: url(&quot;project://database/Assets/Images/narattor%20box.png?fileID=-5418256492352465469&amp;guid=812de49ed95bbcf4c95c65240393e85e&amp;type=3#narattor box_0&quot;); justify-content: center; padding: 20px; left: 384px;">
+            <ui:Label name="StoryText" text="" style="color: black; font-size: 50px; -unity-text-align: middle-center; opacity: 1; transition-duration: 1s; white-space: normal; -unity-font-definition: url(&quot;project://database/Assets/Font%20style/mrdafoe-bower-master/MrDafoe-Regular.ttf?fileID=12800000&amp;guid=df019b53e3aeef841b07cd38f3668ad0&amp;type=3#MrDafoe-Regular&quot;); height: 10px; width: 1131px; margin-left: 35px;"/>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>
