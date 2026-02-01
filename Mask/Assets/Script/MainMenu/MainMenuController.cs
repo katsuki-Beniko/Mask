@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.UIElements;
 using UnityEngine.SceneManagement;
+using UnityEngine.InputSystem;
 
 
 public class MainMenuController : MonoBehaviour
@@ -25,6 +26,9 @@ public class MainMenuController : MonoBehaviour
     private SliderInt _volSlider;
     private Label _volNumLabel;
     private Button _backBtn;
+    private VisualElement _exit;
+    private Button _noBtn;
+    private Button _yesBtn;
 
     private float _timer = 0f;
     //private float _cumulativeAngle = 0f;
@@ -48,11 +52,17 @@ public class MainMenuController : MonoBehaviour
         _volNumLabel = ui.Q<Label>("vol_num");
         _backBtn = ui.Q<Button>("back_btn");
 
+        _exit = ui.Q<VisualElement>("exit_container");
+        _noBtn = ui.Q<Button>("no_btn");
+        _yesBtn = ui.Q<Button>("yes_btn");
+
         startBtn.clicked += OnStartButtonClicked;
         settingBtn.clicked += ShowSettings;
         tutoBtn.clicked += OnTutoButtonClicked;
         creditBtn.clicked += OnCreditButtonClicked;
         _backBtn.clicked += HideSettings;
+        _noBtn.clicked += HideExit;
+        _yesBtn.clicked += QuitGame;
 
         int savedVol = PlayerPrefs.GetInt("MasterVolume", 100);
         _volSlider.value = savedVol;
@@ -108,6 +118,18 @@ public class MainMenuController : MonoBehaviour
             float verticalOffset = Mathf.Sin(_timer * 2f) * 10f;
             musicNote.style.translate = new Translate(0, verticalOffset);
         }
+
+        if (Keyboard.current != null && Keyboard.current.escapeKey.wasPressedThisFrame)
+        {
+            if(_settings.ClassListContains("appear"))
+            {
+                return;
+            }
+            else
+            {
+                ShowExit();
+            }
+        }
     }
 
     private void UpdateSongTitle()
@@ -135,6 +157,18 @@ public class MainMenuController : MonoBehaviour
         _settings.AddToClassList("hide");
     }
 
+    private void ShowExit()
+    {
+        _exit.RemoveFromClassList("hide");
+        _exit.AddToClassList("appear");
+    }
+
+    private void HideExit()
+    {
+        _exit.RemoveFromClassList("appear");
+        _exit.AddToClassList("hide");
+    }
+
     private void OnTutoButtonClicked()
     {
         LoadNewPage("tutorial");
@@ -144,5 +178,10 @@ public class MainMenuController : MonoBehaviour
     {
         //SceneManager.SceneLoaded();
         LoadNewPage("Credits");
+    }
+
+    private void QuitGame()
+    {
+        Application.Quit();
     }
 }

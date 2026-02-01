@@ -1,0 +1,11 @@
+:root {
+}
+
+.hide {
+    display: none;
+}
+
+.appear {
+}
+
+
