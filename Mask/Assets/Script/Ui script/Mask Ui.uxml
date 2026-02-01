@@ -41,26 +41,26 @@
             <ui:Label text="INVITATION DETAIL" name="Label" class="popup-header" style="margin-bottom: 20px;"/>
             <ui:VisualElement name="CrestIconLarge" style="height: 350px; width: 350px; -unity-background-scale-mode: scale-to-fit; background-color: rgba(0, 0, 0, 0);"/>
         </ui:VisualElement>
-        <ui:VisualElement name="ResultScreen" picking-mode="Ignore" class="popup-panel" style="display: none;">
+        <ui:VisualElement name="ResultScreen" picking-mode="Ignore" class="popup-panel" style="display: none; background-image: url(&quot;project://database/Assets/Images/invitation%20example%20page.png?fileID=2800000&amp;guid=aa2715416d4786a4992d7537793ca665&amp;type=3#invitation example page&quot;); background-color: rgba(26, 26, 26, 0); border-left-color: rgba(255, 215, 0, 0); border-right-color: rgba(255, 215, 0, 0); border-top-color: rgba(255, 215, 0, 0); border-bottom-color: rgba(255, 215, 0, 0);">
             <ui:Label text="NIGHTLY SUMMARY" class="popup-header"/>
             <ui:VisualElement class="result-row">
-                <ui:Label text="Correct Rejects:" class="result-label"/>
-                <ui:Label name="CorrectRejectsVal" text="0" class="result-value"/>
+                <ui:Label text="Correct Rejects:" class="result-label" style="color: rgb(0, 0, 0);"/>
+                <ui:Label name="CorrectRejectsVal" text="0" class="result-value" style="color: rgb(0, 0, 0);"/>
             </ui:VisualElement>
             <ui:VisualElement class="result-row">
-                <ui:Label text="Incorrect Rejects:" class="result-label"/>
-                <ui:Label name="IncorrectRejectsVal" text="0" class="result-value"/>
+                <ui:Label text="Incorrect Rejects:" class="result-label" style="color: rgb(0, 0, 0);"/>
+                <ui:Label name="IncorrectRejectsVal" text="0" class="result-value" style="color: rgb(0, 0, 0);"/>
             </ui:VisualElement>
             <ui:VisualElement class="result-row">
-                <ui:Label text="Correct Masks:" class="result-label"/>
-                <ui:Label name="CorrectMasksVal" text="0" class="result-value"/>
+                <ui:Label text="Correct Masks:" class="result-label" style="color: rgb(0, 0, 0);"/>
+                <ui:Label name="CorrectMasksVal" text="0" class="result-value" style="color: rgb(0, 0, 0);"/>
             </ui:VisualElement>
             <ui:VisualElement class="result-row">
-                <ui:Label text="Incorrect Masks:" class="result-label"/>
-                <ui:Label name="IncorrectMasksVal" text="0" class="result-value"/>
+                <ui:Label text="Incorrect Masks:" class="result-label" style="color: rgb(0, 0, 0);"/>
+                <ui:Label name="IncorrectMasksVal" text="0" class="result-value" style="color: rgb(0, 0, 0);"/>
             </ui:VisualElement>
             <ui:VisualElement name="GradeContainer" style="margin-top: 20px; align-items: center;">
-                <ui:Label text="FINAL EVALUATION" class="side-header"/>
+                <ui:Label text="FINAL EVALUATION" class="side-header" style="color: rgb(0, 0, 0);"/>
                 <ui:Label name="GradeValue" text="---" class="grade-text"/>
             </ui:VisualElement>
             <ui:Button name="FinishBtn" text="FINISH" class="close-btn" style="margin-top: 20px;"/>
