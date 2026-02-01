@@ -21,3 +21,49 @@
 
 .appear {
 }
+
+/* Container for the button to allow absolute positioning of arrows */
+.menu-btn-with-arrows {
+    position: absolute;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    overflow: visible; /* Ensure arrows can sit outside the button bounds if needed */
+}
+
+/* Base style for both arrows */
+.hover-arrow {
+    position: absolute;
+    width: 100px; /* Adjust based on your arrow sprite size */
+    height: 50px;
+    background-image: url('project://database/Assets/Images/left_right_arrow.png');
+    -unity-background-scale-mode: scale-to-fit;
+    opacity: 0;
+    transition-property: opacity, translate;
+    transition-duration: 0.2s;
+    picking-mode: Ignore;
+}
+
+/* Specific positioning for Left and Right */
+.left-arrow {
+    left: -120px; /* Adjust distance from button text */
+    /* If your sprite contains both arrows, you might need background-position or separate sprites */
+}
+
+.right-arrow {
+    right: -120px;
+}
+
+/* Hover Logic: Show arrows when the button is hovered */
+.menu-btn-with-arrows:hover .hover-arrow {
+    opacity: 1;
+}
+
+/* Optional: Slight 'pop' animation */
+.menu-btn-with-arrows:hover .left-arrow {
+    translate: 10px 0;
+}
+
+.menu-btn-with-arrows:hover .right-arrow {
+    translate: -10px 0;
+}
