@@ -35,13 +35,11 @@
             <ui:VisualElement name="ProtocolDetailView" class="protocol-detail-hidden" style="display: none; position: absolute; top: 180px; left: -1019px; background-image: url(&quot;project://database/Assets/Images/invitation%20example%20page.png?fileID=2800000&amp;guid=aa2715416d4786a4992d7537793ca665&amp;type=3#invitation example page&quot;); height: 691px; width: 572px;">
                 <ui:Label name="DetailTitle" text="FACTION NAME" class="popup-header" style="-unity-font-definition: url(&quot;project://database/Assets/Font%20style/mrdafoe-bower-master/MrDafoe-Regular.ttf?fileID=12800000&amp;guid=df019b53e3aeef841b07cd38f3668ad0&amp;type=3#MrDafoe-Regular&quot;); font-size: 56px; margin-bottom: 10px; -unity-text-align: upper-center; color: rgb(74, 46, 46); border-bottom-right-radius: 0; border-left-color: rgba(255, 215, 0, 0); border-right-color: rgba(255, 215, 0, 0); border-top-color: rgba(255, 215, 0, 0); border-bottom-color: rgba(255, 215, 0, 0); margin-top: 12px;"/>
                 <ui:VisualElement name="CrestIcon" style="height: 420px; width: 411px; align-self: center; margin-bottom: 34px; -unity-background-scale-mode: scale-to-fit; display: flex;"/>
-                <ui:Button name="CloseProtocol" text="CLOSE" class="close-btn"/>
             </ui:VisualElement>
         </ui:VisualElement>
         <ui:VisualElement name="InvitationOverlay" picking-mode="Ignore" class="popup-panel" style="display: none; height: 576px; width: 536px; justify-content: center; align-items: center; color: rgb(0, 0, 0); background-color: rgb(132, 132, 132); top: 226px; left: 663px;">
             <ui:Label text="INVITATION DETAIL" name="Label" class="popup-header" style="margin-bottom: 20px;"/>
             <ui:VisualElement name="CrestIconLarge" style="height: 350px; width: 350px; -unity-background-scale-mode: scale-to-fit; background-color: rgba(0, 0, 0, 0);"/>
-            <ui:Button name="CloseInvite" text="CLOSE" class="close-btn" style="margin-top: 20px;"/>
         </ui:VisualElement>
         <ui:VisualElement name="ResultScreen" picking-mode="Ignore" class="popup-panel" style="display: none;">
             <ui:Label text="NIGHTLY SUMMARY" class="popup-header"/>
@@ -65,10 +63,10 @@
                 <ui:Label text="FINAL EVALUATION" class="side-header"/>
                 <ui:Label name="GradeValue" text="---" class="grade-text"/>
             </ui:VisualElement>
-            <ui:Button name="FinishBtn" text="FINISH" class="close-btn" style="margin-top: 20px;"/>        </ui:VisualElement>
+            <ui:Button name="FinishBtn" text="FINISH" class="close-btn" style="margin-top: 20px;"/>
+        </ui:VisualElement>
         <ui:VisualElement name="LeftRack" class="sidebar" style="top: 0; left: 1px; background-color: rgba(30, 30, 30, 0); width: 230px;">
-            <ui:Label text="Masks" selectable="false" focusable="false" class="side-header" style="-unity-font-definition: url(&quot;project://database/Assets/Font%20style/mrdafoe-bower-master/MrDafoe-Regular.ttf?fileID=12800000&amp;guid=df019b53e3aeef841b07cd38f3668ad0&amp;type=3#MrDafoe-Regular&quot;); font-size: 25px; height: 34px;"/>
-            <ui:VisualElement name="VisualElement" class="mask-slot" style="background-image: none; margin-top: 136px; margin-right: 45px; width: 90px;">
+            <ui:VisualElement name="VisualElement" class="mask-slot" style="background-image: none; margin-top: 181px; margin-right: 45px; width: 90px;">
                 <ui:VisualElement class="mask-stand-back" style="top: 31px; left: 0;"/>
                 <ui:VisualElement name="NobilityMask" class="mask-circle nobility" style="background-image: url(&quot;project://database/Assets/Images/Nobility%20Mask.png?fileID=2800000&amp;guid=9ef35efa53ac01d42b24191d1e794092&amp;type=3#Nobility Mask&quot;); background-color: rgba(255, 215, 0, 0); top: -36px; left: -27px; background-size: 150% 150%; width: 150px; height: 150px;"/>
                 <ui:VisualElement picking-mode="Ignore" class="mask-stand-front" style="top: 9px; left: -1px;"/>
@@ -106,7 +104,6 @@
                     </ui:VisualElement>
                 </ui:VisualElement>
             </ui:VisualElement>
-            <ui:Button name="CloseLogbook" text="CLOSE" class="close-btn" style="align-self: center; margin-bottom: 20px;"/>
         </ui:VisualElement>
         <ui:VisualElement name="PauseMenu" picking-mode="Ignore" class="pause-overlay" style="display: none; border-left-color: rgb(255, 255, 255); border-right-color: rgb(255, 255, 255); border-top-color: rgb(255, 255, 255); border-bottom-color: rgb(255, 255, 255);">
             <ui:VisualElement name="PauseFrame" class="pause-frame" style="-unity-font-style: normal; border-bottom-width: 50px;">
